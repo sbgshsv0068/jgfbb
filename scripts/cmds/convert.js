@@ -2,8 +2,8 @@ const fs = require("fs");
 
 module.exports = {
   config: {
-    name: "v2a",
-    aliases: ["video2audio"],
+    name: "convert",
+    aliases: ["v2a"],
     description: "Convert Video to audio ",
     version: "1.2",
     author: "arfan",
