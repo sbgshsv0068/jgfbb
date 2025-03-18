@@ -99,7 +99,7 @@ for (const t of subTitleArray) {
   centerText(textColor2, t.length);
 }
 centerText(gradient("#9F98E8", "#AFF6CF")("Created by NTKhang + Mohammad RANA  with ♡"), "Created by NTKhang + Mohammad RANA with ♡".length);
-centerText(gradient("#9F98E8", "#AFF6CF")("Source code: https://github.com/TOXIC-RANA/GOATBOT-V2"), "Source code: https://github.com/TOXIC-RANA/GOATBOT-V2".length);
+centerText(gradient("#9F98E8", "#AFF6CF")("Source code: https://github.com/TOXIC-RANA/Goat-Bot"), "Source code: https://github.com/TOXIC-RANA/Goat-Bot".length);
 centerText(gradient("#f5af19", "#f12711")("ALL VERSIONS NOT RELEASED HERE ARE FAKE"), "ALL VERSIONS NOT RELEASED HERE ARE FAKE".length);
 let widthConsole = process.stdout.columns;
 if (widthConsole > 50) {
