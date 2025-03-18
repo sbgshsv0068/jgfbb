@@ -1,72 +1,52 @@
-const { GoatWrapper } = require("fca-liane-utils");
- const axios = require('axios');
+const axios = require('axios');
 const fs = require('fs');
 const path = require('path');
 
 module.exports = {
   config: {
     name: "flux",
-    aliases: ["fl"],
-    version: "1.0.0",
-    author: "Vex_Arafat",
+    author: "NZ R",
+    version: "1.0",
+    countDown: 10,
     role: 0,
-    shortDescription: "Generate an image based on a prompt using flux API created by Lance",
-    longDescription: "generate image with flux API created by Lance ",
-    category: "IMAGE",
+    category: "ai-generated",
     guide: {
-      en: "{pn} <prompt>"
+      en: "-flux <prompt> --<ratio>\n\nOptional ratios:\n\n--1 for 1:1\n--2 for 16:9\n--3 for 4:3\n--4 for 3:2\n--5 for 5:4\n--6 for 9:16\n--7 for 2:3\n--8 for 3:4\n--9 for 4:9\n\nExample: -flux 'your prompt' --1\n\n[FLUX Model Image Generations]"
     },
-    usages: "/flux <prompt>", 
-    cooldowns: 5,
-    dependencies: {
-      "axios": "",
-      "fs": "",
-      "path": ""
-    }
   },
-  onStart: async function({ message, api, args, event }) {
-    if (args.length === 0) return message.reply("Please provide a prompt to generate an image.");
+  onStart: async ({ message: { reply: r, unsend }, args: a }) => {
+    if (a.length === 0) return r("FLUX GENERATOR USAGE\n\n" + module.exports.config.guide.en);
 
-    const prompt = args.join(" ");
-    const apiUrl = `http://158.69.118.209:20147/api/flux?prompt=${encodeURIComponent(prompt)}`;
+    let pr = a.join(" ");
+    if (!pr) return r("❌ | Please provide a query for image generation.");
+
+    let ratios = ["1", "2"];
+    let match = pr.match(/--(\d)$/);
+    let ratio = match ? match[1] : ratios[Math.floor(Math.random() * ratios.length)];
+    pr = pr.replace(/--\d$/, "").trim();
+
+    const waitingMessage = await r("⏳ | Generating image... Please wait...");
 
     try {
-      const response = await axios.get(apiUrl);
-
-      if (!response.data || !response.data.imageUrl) {
-        return message.reply("Failed to generate image, please try again.");
-      }
-
-      const imageUrl = response.data.imageUrl;
-      const imagePath = path.resolve(__dirname, 'cache', `${Date.now()}.jpg`);
-
-      const writer = fs.createWriteStream(imagePath);
-      const imageResponse = await axios({
-        url: imageUrl,
-        method: 'GET',
-        responseType: 'stream'
+      const imageResponse = await axios.get(`https://fluxpro-v3-by-nzr.onrender.com/fluxpro?prompt=${encodeURIComponent(pr)}&ratio=${encodeURIComponent(ratio)}`, {
+        responseType: 'arraybuffer'
       });
 
-      imageResponse.data.pipe(writer);
+      const tempFilePath = path.join(__dirname, `temp_${Date.now()}.jpg`);
+      fs.writeFileSync(tempFilePath, Buffer.from(imageResponse.data));
 
-      writer.on('finish', () => {
-        message.reply({
-          body: `Here is the generated image for your prompt: "${prompt}"`,
-          attachment: fs.createReadStream(imagePath)
-        }, () => {
-          fs.unlinkSync(imagePath);
-        });
+      await unsend(waitingMessage.messageID);
+
+      await r({
+        body: "✅ | Generated",
+        attachment: fs.createReadStream(tempFilePath)
       });
 
-      writer.on('error', (err) => {
-        message.reply("Error downloading the image.");
-      });
+      fs.unlinkSync(tempFilePath);
 
-    } catch (error) {
-      console.error("Error:", error);
-      message.reply("An error occurred while processing your request.");
+    } catch (err) {
+      await unsend(waitingMessage.messageID);
+      return r(`❌ | Error: ${err.message}`);
     }
   }
 };
-const wrapper = new GoatWrapper(module.exports);
-wrapper.applyNoPrefix({ allowPrefix: true });
