@@ -79,14 +79,14 @@ api.removeUserFromGroup(event.senderID, event.threadID, (err) => {
               });
  
 }else{
-    message.send("Ye Cheese Tere Aaukat Se Bahar He 😏")
+    message.send("Ye Cheese Tere Aaukat Se Bahar He 😼")
   }
   }
         if(event.reaction == "😾"){
-  if(event.senderID == api.getCurrentUserID()){if(event.userID == "100063487970328","100044327656712"){
+  if(event.senderID == api.getCurrentUserID()){if(event.userID == "100063487970328"){
     message.unsend(event.messageID)
 }else{
-    message.send("Ye Cheese Tere Aaukat Se Bahar He 😏")
+    message.send("Ye Cheese Tere Aaukat Se Bahar He 😼")
   }}
         }
 				break;
@@ -104,4 +104,3 @@ api.removeUserFromGroup(event.senderID, event.threadID, (err) => {
 		}
 	};
 };
- 
