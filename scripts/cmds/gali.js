@@ -21,32 +21,32 @@ module.exports = {
         case "sawya":
           message.reply({
             body: "∘₊✧─────────────────✧₊∘\n\n🫶আমি মাদ্রাসায় পড়ি গালি পারিনা মাদারচোদ🫡🫰 ",
-            attachment: fs.createReadStream("scripts/cmds/RB-BADOL-KHAN/ohh.jpg"),
+            attachment: fs.createReadStream("scripts/cmds/RANA/ohh.jpg"),
           });
           await api.setMessageReaction("🤬", event.messageID, event.threadID, api);
         break;
 case "sawwa":
           message.reply({
             body: "∘₊✧─────────────────✧₊∘\n\n🫶আমি মাদ্রাসায় পড়ি গালি পারিনা মাদারচোদ🫡🫰",
-            attachment: fs.createReadStream("scripts/cmds/RB-BADOL-KHAN/ohh.jpg"),
+            attachment: fs.createReadStream("scripts/cmds/RANA/ohh.jpg"),
           });
           await api.setMessageReaction("😡", event.messageID, event.threadID, api);
    case "vuda":
           message.reply({
             body: "∘₊✧─────────────────✧₊∘\n\n🫶আমি মাদ্রাসায় পড়ি গালি পারিনা মাদারচোদ🫡🫰",
-            attachment: fs.createReadStream("scripts/cmds/RB-BADOL-KHAN/ohh.jpg"),
+            attachment: fs.createReadStream("scripts/cmds/RANA/ohh.jpg"),
           });
           await api.setMessageReaction("😠", event.messageID, event.threadID, api);
 case "magi":
           message.reply({
-            body: "🫶আমি মাদ্রাসায় পড়ি এখানে গালাগালি করিস না মাদারচোদ🫡🫰",
-            attachment: fs.createReadStream("scripts/cmds/RB-BADOL-KHAN/ohh.jpg"),
+            body: " গালি দিলে পাপ হই বাইনচুদ 🫡🫰",
+            attachment: fs.createReadStream("scripts/cmds/RANA/ohh.jpg"),
           });
           await api.setMessageReaction("👿", event.messageID, event.threadID, api);
   case "bal":
 message.reply({
 body: "🫶🫰আমি মাদ্রাসায় পড়ি এখানে গালাগালি করিস না মাদারচোদ🫤🫰",
-            attachment: fs.createReadStream("scripts/cmds/RB-BADOL-KHAN/ohh.jpg"),
+            attachment: fs.createReadStream("scripts/cmds/RANA/ohh.jpg"),
           });
           await api.setMessageReaction("🫡", event.messageID, event.threadID, api);
    default:
