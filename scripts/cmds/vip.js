@@ -10,7 +10,7 @@ module.exports = {
 		countDown: 5,
 		role: 2,
 		description: "Add, remove, edit vip role",
-		category: "ARAFAT",
+		category: "RANA",
 		guide: ' {pn} [add | -a] <uid | @tag>: Add Vip role for user'
 				+ '\n	 {pn} [remove | -r] <uid | @tag>: Remove vip role of user'
 				+ '\n	 {pn} [list | -l]: List all vips'
