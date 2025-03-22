@@ -9,7 +9,7 @@ config: {
     role: 0,
     shortDescription: {
       vi: "",
-      en: "virtual bank system"
+      en: "virtuel bank system" 
     },
     longDescription: {
       vi: "",
