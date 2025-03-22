@@ -1,42 +1,31 @@
-module.exports = {
-	config: {
-		name: "all",
-		version: "1.2",
-		author: "NTKhang",
-		countDown: 5,
-		role: 1,
-		description: {
-			vi: "Tag tất cả thành viên trong nhóm chat của bạn",
-			en: "Tag all members in your group chat"
-		},
-		category: "box chat",
-		guide: {
-			vi: "   {pn} [nội dung | để trống]",
-			en: "   {pn} [content | empty]"
-		}
-	},
-
-	onStart: async function ({ message, event, args }) {
-		const { participantIDs } = event;
-		const lengthAllUser = participantIDs.length;
-		const mentions = [];
-		let body = args.join(" ") || "@all";
-		let bodyLength = body.length;
-		let i = 0;
-		for (const uid of participantIDs) {
-			let fromIndex = 0;
-			if (bodyLength < lengthAllUser) {
-				body += body[bodyLength - 1];
-				bodyLength++;
-			}
-			if (body.slice(0, i).lastIndexOf(body[i]) != -1)
-				fromIndex = i;
-			mentions.push({
-				tag: body[i],
-				id: uid, fromIndex
-			});
-			i++;
-		}
-		message.reply({ body, mentions });
+module.exports.config = {
+	name: "all",
+	version: "1.0.1",
+	role: 0,
+	author: "RANA",
+	description: "tag all",
+   category: "box chat",
+	usages: "tagall",
+	countDowns: 5,
+	dependencies: {
+		"request":  ""
 	}
 };
+
+module.exports.onStart = async function({ api, event, args }) {
+	try {
+		const botID = api.getCurrentUserID();
+		const listUserID = event.participantIDs.filter(ID => ID != botID && ID != event.senderID);
+		var body = (args.length != 0) ? args.join(" ") : "@everyone", mentions = [], index = 0;
+		
+		for(const idUser of listUserID) {
+			body = "‎" + body;
+			mentions.push({ id: idUser, tag: "‎", fromIndex: index - 1 });
+			index -= 1;
+		}
+
+		return api.sendMessage({ body, mentions }, event.threadID, event.messageID);
+
+	}
+	catch (e) { return console.log(e); }
+                           }
