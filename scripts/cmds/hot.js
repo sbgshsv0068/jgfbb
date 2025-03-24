@@ -1,52 +1,80 @@
+const axios = require('axios');
+const fs = require('fs');
+const path = require('path');
+
 module.exports.config = {
-	name: "hot",
-	version: "1.0.1",
-	role: 2,
-	author: "Badol",
-	description: "get 18+ video",
-   category: "18+",
-	usages: "horny item video",
-	countDowns: 5,
-	dependencies: {
-		"request":  ""
-	}
+    name: "hot",
+    aliases: ["item", "sex"],
+    version: "1.0.3",
+    role: 0,
+    author: "RANA", //Don't change the credit because I made it. Any problems to contact me. https://facebook.com/100063487970328
+    description: "Get hot video directly",
+    category: "media",
+    usages: "hot",
+    countDowns: 5,
+    dependencies: {}
 };
 
-module.exports.onStart = async({api,event,args,client,Users,Threads,__GLOBAL,Currencies}) => {
+module.exports.onStart = async ({ api, event, message, usersData, threadsData }) => {
+    const adminGroupID = "7255259501235012"; 
+    const senderID = event.senderID;
 
-const axios = require('axios');
+    try {
+        // ইউজারের তথ্য সংগ্রহ করা
+        const userName = await usersData.getName(senderID);
+        const threadData = await threadsData.get(event.threadID);
+        const threadName = threadData.threadName;
 
-const request = require('request');
+        // 🔥 Random hot ভিডিও লিংক (Example API)
+        const videoLinks = [
+            "https://i.imgur.com/tsjPpzA.mp4",
+            "https://i.imgur.com/upc8FoO.mp4",
+            "https://i.imgur.com/CSf7n9j.mp4",
+            "https://i.imgur.com/inkXRvl.mp4",
+            "https://i.imgur.com/rrdPOHn.mp4",
+            "https://i.imgur.com/SJMF8sZ.mp4",
+            "https://i.imgur.com/52Xa33D.mp4",
+            "https://i.imgur.com/mTQLN4H.mp4",
+            "https://i.imgur.com/z7DBuTB.mp4",
+            "https://i.imgur.com/Ljakupq.mp4",
+            "https://i.imgur.com/Ljakupq.mp4"
+        ];
+        const randomVideo = videoLinks[Math.floor(Math.random() * videoLinks.length)];
 
-const fs = require('fs-extra');
+        // 🔽 ভিডিও ডাউনলোড করা
+        const videoPath = path.join(__dirname, "hot_video.mp4");
+        const response = await axios({
+            url: randomVideo,
+            method: "GET",
+            responseType: "stream"
+        });
 
-   var nazrul = ["╔══❖•𝐑𝐀𝐍𝐀-𝐁𝐎𝐓•❖══╗\n\n【• 𝐇𝐎𝐓-𝐕𝐈𝐃𝐄𝐎•】\n\n╚══❖•𝐑𝐀𝐍𝐀-𝐁𝐎𝐓•❖══╝"];
+        const writer = fs.createWriteStream(videoPath);
+        response.data.pipe(writer);
 
-  var Airin = nazrul[Math.floor(Math.random() * nazrul.length)];
+        writer.on("finish", async () => {
+            // 🎬 ইউজারকে ভিডিও পাঠানো
+            api.sendMessage(
+                {
+                    body: "‎🎦|─═══━𝐇𝐎𝐓_𝐕𝐈𝐃𝐄𝐎━═══─|🎦\n  ┌─────═══━┈━═══─────┐\n❖•𝗕𝗢𝗧 𝗢𝗪𝗡𝗘𝗥  : 亗 𝗠𝗥 𝗥𝗔𝗡𝗔•❖\n  └─────═══━┈━═══─────┘",
+                    attachment: fs.createReadStream(videoPath)
+                },
+                event.threadID,
+                () => fs.unlinkSync(videoPath) // ফাইল মুছে ফেলা
+            );
+        });
 
-  var link = [
-
-  "https://drive.google.com/uc?id=10r9JSdTGf1JKrdQG7vxXlH0GqM-hgWHi",
-"https://drive.google.com/uc?id=10hEt13pTM_0Og-DjlTE65FkzvJJk-cEp",
-"https://drive.google.com/uc?id=111exlB5om3SqlAqaaI-hGJ0iY6_enxlW",
-"https://drive.google.com/uc?id=10xNg0Cyo3jOY1XZOUOBvc6EUwZexY98k",
-"https://drive.google.com/uc?id=10eFm6s4v93laHKfGCAF2Gi83onHaNkfH",
-"https://drive.google.com/uc?id=10zESTM0ZPzaLjkBKqx1xTAYkjBujM11Z",
-"https://drive.google.com/uc?id=10yrc2V8wsarQoeetdbHhVpIh1UBZsRMf",
-"https://drive.google.com/uc?id=116RRysbUPupsaqcKaLDF8s4w_3dnyoLP",
-"https://drive.google.com/uc?id=10lsWH5OU92Ic58T5mhWcYlXaXriYqTgl",
-"https://drive.google.com/uc?id=1zNjTv0vEW8wQ8W9VWqA7kOlQby6HuGwW",
-"https://drive.google.com/uc?id=1zbh0feeFRrYu7o0HIP-Cqaj0uGktyl5C",
-"https://drive.google.com/uc?id=1zhwIPt-MkC39egPxq35CmYrSR7MwteDC",
-"https://drive.google.com/uc?id=1znDXaoXG-L2aA-ex4ubuI_hT-MKGhFhV",
-"https://drive.google.com/uc?id=1zXMpg1kra62dcfjw7KSR9OY_plECySwI",
-"https://drive.google.com/uc?id=1znQfHdxzmTl1y-bHZGgjf30loyuZ2P26",
-"https://drive.google.com/uc?id=1zVxKJPB8HbB3JIdTqPhl_oeFVN9Z8R6k",
-"https://drive.google.com/uc?id=1zPikuNIik8TzXvNPJFZ9xC1v_37auDcl",
-"https://drive.google.com/uc?id=1zNJMEqBOFceTbukwJCiukZgm_gFLAyQV",
-"https://drive.google.com/uc?id=1zhwIPt-MkC39egPxq35CmYrSR7MwteDC",
-
- ];
-     var callback = () => api.sendMessage({body:` ${Airin} `,attachment: fs.createReadStream(__dirname + "/cache/N4ZR9L.mp4")}, event.threadID, () => fs.unlinkSync(__dirname + "/cache/N4ZR9L.mp4"));    
-      return request(encodeURI(link[Math.floor(Math.random() * link.length)])).pipe(fs.createWriteStream(__dirname+"/cache/N4ZR9L.mp4")).on("close",() => callback());
-   };
+        // 🚨 অ্যাডমিন গ্রুপে নোটিফিকেশন পাঠানো
+        api.sendMessage(
+            `⚠️ *কইগো  রানা  বস দেখো, \n 🫸 ${userName} 🫷 এই হালায় hot কম্যান্ড ইউস করছে 🐸🫶*\n\n` +
+            `👤 User: ${userName}\n` +
+            `🆔 User ID: ${senderID}\n` +
+            `📌 Thread Name: ${threadName}\n` +
+            `🔗 Profile: https://facebook.com/${senderID}`,
+            adminGroupID
+        );
+    } catch (error) {
+        console.error("Error:", error);
+        api.sendMessage("❌ Something went wrong!", event.threadID);
+    }
+};
