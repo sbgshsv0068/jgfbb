@@ -12,7 +12,7 @@ module.exports = {
 		longDescription: {
 			en: "Provides you the information of cricket matches"
 		},
-		category: "info",
+		category: "cricket",
 		guide: {
 			en: "{pn}"
 		}
@@ -22,7 +22,7 @@ module.exports = {
 			const response = await axios.get("https://anbusec.xyz/api/sports/match?apikey=jmBOjQSgq5mK8GScw9AB");
 
 			const message = {
-				body: `𝗛𝗲𝗿𝗲 𝗦𝗼𝗺𝗲 𝗠𝗮𝘁𝗰𝗵 𝗜𝗻𝗳𝗼𝗿𝗺𝗮𝘁𝗶𝗼𝗻.. 📑:\n\n` +
+				body: `𝗛𝗲𝗿𝗲 𝗦𝗼𝗺𝗲 𝗠𝗮𝘁𝗰𝗵 𝗜𝗻𝗳𝗼𝗿𝗺𝗮𝘁𝗶𝗼𝗻..📑:\n\n` +
 					`❏ 𝗡𝗮𝗺𝗲: ${response.data.data.name}\n` +
 					`❏ 𝗦𝘁𝗮𝘁𝘂𝘀: ${response.data.data.status}\n` +
 					`❏ 𝗕𝗶𝗼𝗴𝗿𝗮𝗽𝗵𝘆: ${response.data.data.url}`,
