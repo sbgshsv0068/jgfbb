@@ -80,8 +80,8 @@ config: {
          return api.sendMessage("️😉", threadID);
        };
  
-       if ((event.body.toLowerCase() == "flop over") || (event.body.toLowerCase() == "flop")) {
-         return api.sendMessage("️1 is interaction, 2 is kick :))))", threadID);
+       if ((event.body.toLowerCase() == "oi") || (event.body.toLowerCase() == "oii")) {
+         return api.sendMessage("️ওইই! 🙄 আবার কি চাই? খেয়ে দেয়ে কাজ নাই, শুধু আমাকে ডাকো 😑… আচ্ছা বলো, এবার কি কাণ্ড ঘটাইলা? 🤔🔥", threadID);
        };
  
        if ((event.body.toLowerCase() == "clmm bot")) {
