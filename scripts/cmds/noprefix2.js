@@ -9,7 +9,7 @@ module.exports = {
     role: 0,
     shortDescription: "no prefix2",
     longDescription: "no prefix2",
-    category: "no prefix",
+    category: "fun",
   },
 
   onStart: async function() {},
