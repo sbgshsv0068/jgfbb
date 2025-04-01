@@ -26,7 +26,7 @@ config: {
       nick: '𝐓𝐎𝐌'
     };
 
-    const bold = 'https://i.imgur.com/2NhHoFE.jpeg'; // Replace with your Google Drive videoid link https://drive.google.com/uc?export=download&id=here put your video id
+    const bold = 'https://i.imgur.com/aSvCogu.mp4'; // Replace with your Google Drive videoid link https://drive.google.com/uc?export=download&id=here put your video id
 
     const tmpFolderPath = path.join(__dirname, 'tmp');
 
@@ -40,16 +40,16 @@ config: {
     fs.writeFileSync(videoPath, Buffer.from(videoResponse.data, 'binary'));
 
     const response = `
-❮●❯━━━━━❪𝐑•𝐁❫━━━━━❮●❯️\n\n💛𝐎𝐖𝐍𝐄𝐑-𝐈𝐍𝐅𝐈𝐑𝐌𝐀𝐓𝐈𝐎𝐍:💛\n\n
+❮●❯━━━━━━❪𝐑•𝐁❫━━━━━━❮●❯️\n\n💛𝐎𝐖𝐍𝐄𝐑-𝐈𝐍𝐅𝐈𝐑𝐌𝐀𝐓𝐈𝐎𝐍:💛\n\n
 𝐍𝐀𝐌𝐄: ${ownerInfo.name}\n
+𝐍𝐈𝐂𝐊: ${ownerInfo.nick}\n
 𝐆𝐄𝐍𝐃𝐄𝐑: ${ownerInfo.gender}\n
 𝐀𝐆𝐄: ${ownerInfo.age}\n
 𝐇𝐄𝐈𝐆𝐇𝐓: ${ownerInfo.height}\n
-𝐅𝐀𝐂𝐄𝐁𝐎𝐎𝐊: ${ownerInfo.facebookLink}\n
-𝐌𝐄𝐒𝐒𝐄𝐍𝐆𝐄𝐑: ${ownerInfo.messengerLink}\n
-𝐖𝐇𝐀𝐓𝐒𝐀𝐏𝐏: ${ownerInfo.WhatsAppLink}\n
-𝐍𝐈𝐂𝐊: ${ownerInfo.nick}\n
-\n\n❮●❯━━━━━❪𝐑•𝐁❫━━━━━❮●❯
+𝐅𝐁: ${ownerInfo.facebookLink}\n
+𝐌𝐒𝐆: ${ownerInfo.messengerLink}\n
+𝐖𝐏: ${ownerInfo.WhatsAppLink}\n
+\n\n❮●❯━━━━━━❪𝐑•𝐁❫━━━━━━❮●❯
 `;
 
 
