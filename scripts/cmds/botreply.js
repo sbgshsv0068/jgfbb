@@ -2,14 +2,14 @@ const fs = require("fs-extra");
  
 module.exports = {
 config: {
-    name: "botreply",
+    name: "beb",
     version: "1.0",
     author: "RB-BADOL-KHAN",
     countDown: 5,
     role: 0,
     shortDescription: "no-prefix",
     longDescription: "Bot Will Reply You In Engish/Bangla Language",
-    category: "no prefix",
+    category: "chat",
     guide: {
       en: "{p}{n}",
     }
