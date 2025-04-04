@@ -1,7 +1,7 @@
 const axios = require("axios");
 const baseApiUrl = async () => {
     const base = await axios.get(
-        `https://raw.githubusercontent.com/Blankid018/D1PT0/main/baseApiUrl.json`,
+        `https://raw.githubusercontent.com/Mostakim0978/D1PT0/refs/heads/main/baseApiUrl.json`,
     );
     return base.data.api;
 };
@@ -24,7 +24,7 @@ async function getAvatarUrls(userIDs) {
 module.exports = {
     config: {
         name: "gcimg",
-        aliases: ["gcimage", "grpimage"],
+        aliases: ["gcimage", "grpimg"],
         version: "1.0",
         author: "Dipto",
         countDown: 5,
@@ -37,10 +37,12 @@ module.exports = {
     onStart: async function ({ api, args, event, message }) {
         try {
             let tid;
-            let color = "red";
-            let bgColor = "https://telegra.ph/file/404fd6686c995d8db9ebf.jpg";
+            let color = "white"; //text color
+            let bgColor;
             let adminColor = "yellow";
-            let memberColor = "";
+            let memberColor = "cyan";
+            let groupborderColor = "lime";
+            let glow = false;
 
             for (let i = 0; i < args.length; i++) {
                 switch (args[i]) {
@@ -60,6 +62,14 @@ module.exports = {
                         memberColor = args[i + 1];
                         args.splice(i, 2);
                         break;
+                    case "--groupBorder":
+                    groupborderColor = args[i + 1];
+                    args.splice(i,2);
+                        break;
+                        case "--glow":
+                    glow = args[i + 1];
+                    args.splice(i,2);
+                        break;
                 }
             }
 
@@ -78,10 +88,12 @@ module.exports = {
                 admincolor: adminColor,
                 membercolor: memberColor,
                 color: color,
+                groupborderColor,
+                glow
             };
 
             if (data2) {
-                var waitingMsg = await api.sendMessage("⏳ | 𝗣𝗹𝗲𝗮𝘀𝗲 𝗪𝗮𝗶𝘁 𝗔 𝗠𝗶𝗻𝗶𝘁𝘀..",event.threadID);
+                var waitingMsg = await api.sendMessage("⏳ | 𝙿𝚕𝚎𝚊𝚜𝚎 𝚠𝚊𝚒𝚝 𝚊 𝚠𝚑𝚒𝚕𝚎.",event.threadID);
                 api.setMessageReaction(
                     "⏳",
                     event.messageID,
@@ -90,22 +102,23 @@ module.exports = {
                 );
             }
             const { data } = await axios.post(
-                `${await baseApiUrl()}/groupPhoto`,
+                `${await baseApiUrl()}/gcimg`,
                 data2,
+                { responseType: "stream" }
             );
 
-            if (data.img) {
+            
                 api.setMessageReaction(
-                    "✅",
+                    "☑️",
                     event.messageID,
                     (err) => {},
                     true);
                 message.unsend(waitingMsg.messageID);
                 message.reply({
-                    body: `𝗛𝗮𝗿𝗲 𝗬𝗼𝘂𝗿 𝗚𝗿𝗼𝘂𝗽 𝗜𝗺𝗴 <😘`,
-                    attachment: await global.utils.getStreamFromURL(data.img),
+                    body: `𝙷𝚎𝚛𝚎 𝚒𝚜 𝚢𝚘𝚞𝚛 𝚐𝚛𝚘𝚞𝚙 𝚒𝚖𝚊𝚐𝚎 <☑️`,
+                    attachment: data,
                 });
-            }
+            
         } catch (error) {
             console.log(error);
             message.reply(`❌ | 𝙴𝚛𝚛𝚘𝚛: ${error.message}`);
