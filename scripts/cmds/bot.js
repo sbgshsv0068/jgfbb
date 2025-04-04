@@ -7,7 +7,7 @@ module.exports = {
     author: "RANA", //Don't change the credit because I made it. Any problems to contact me. https://facebook.com/100063487970328
     countDown: 5,
     role: 0,
-    category: "no prefix"
+    category: "chat"
   },
  
   onStart: ({}) => {},
