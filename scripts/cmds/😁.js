@@ -2,7 +2,7 @@ const fs = require("fs");
 
 module.exports = {
   config: {
-    name: "🐸",
+    name: "😁",
     version: "1.0",
     author: "RANA", //Don't change the credit because I made it. Any problems to contact me. https://facebook.com/100063487970328
     countDown: 5,
@@ -17,12 +17,12 @@ module.exports = {
   onChat: async function ({ event, message }) {
     if (event.body) {
       const body = event.body.toLowerCase();
-      const keywords = ["🐸", "beng", "ব্যাঙ "]; 
+      const keywords = ["😁", "🦷", "dat","দাঁত"]; 
 
       if (keywords.includes(body)) {
         return message.reply({
-          body: " ~ ব্যাঙ দেখাও! আমি তো ব্যাঙ দেখে ভয় পাই না, বরং ওদের সাথে সেলফি তুলতে চাই! 🐸📸😆🔥",
-          attachment: fs.createReadStream("./scripts/cmds/RANA/beng.mp3"),
+          body: " ~ তোমার দাঁত গুলো চক চক করছে গো.. 🙈🥀",
+          attachment: fs.createReadStream("./scripts/cmds/RANA/dat-gulo.mp3"),
         });
       }
     }
