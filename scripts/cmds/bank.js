@@ -3,14 +3,14 @@ const path = require("path");
 
 module.exports = {
   config: {
-    name: "bankv4",
+    name: "bank",
     version: "1.2",
     description: "Deposit or withdraw money from the bank and earn interest",
     guide: {
       vi: "",
       en: "{pn}Bank:\nInterest - Balance\n - Withdraw \n- Deposit \n- Transfer \n- Richest"
     },
-    category: "💰 Economy",
+    category: "game",
     countDown: 15,
     role: 0,
     author: "Loufi | SiAM | Samuel\n\nModified: Shikaki"
