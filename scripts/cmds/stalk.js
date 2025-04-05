@@ -11,7 +11,7 @@ module.exports = {
     role: 0,
     shortDescription: "stalk",
     longDescription: "multi stalk command",
-    category: "𝗜𝗡𝗙𝗢",
+    category: "info",
   },  /**User interface designed by Mesbah Bb'e */
   getTargetUID: (event) => {
     if (event.type === "message_reply") {
