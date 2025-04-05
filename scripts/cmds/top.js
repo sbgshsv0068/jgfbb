@@ -11,7 +11,7 @@ module.exports = {
     longDescription: {
       en: "Displays the top 30 richest users in terms of money with formatted values"
     },
-    category: "group",
+    category: "top",
     guide: {
       en: "{pn}"
     }
