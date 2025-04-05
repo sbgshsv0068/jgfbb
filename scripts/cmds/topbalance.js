@@ -10,7 +10,7 @@ module.exports = {
     longDescription: {
       en: "This module displays the top 10 richest users based on their money points."
     },
-    category: "economy",
+    category: "top",
     guide: {
       en: "📌𝗨𝘀𝗲 `{pn}topbalance` 𝗧𝗼 𝗦𝗲𝗲 𝗧𝗵𝗲 𝗧𝗼𝗽 𝟭𝟬 𝗥𝗶𝗰𝗵𝗲𝘀𝘁 𝗨𝘀𝗲𝗿."
     }
