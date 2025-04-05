@@ -3,10 +3,10 @@ module.exports = {
 		name: "rewrite",
 		version: "1.2",
 		author: "RANA", //Don't change the credit because I made it. Any problems to contact me. https://facebook.com/100063487970328
-		role: 0,
+		role: 2,
 		shortDescription: "Rewrite a bot's message",
 		longDescription: "Rewrite a bot's message by replying to it with 'edit <message>'.",
-		category: "user",
+		category: "owner",
 		guide: {
 			en: "{p}{n} <message>",
 		},
