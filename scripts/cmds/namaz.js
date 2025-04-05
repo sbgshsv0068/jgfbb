@@ -1,6 +1,6 @@
 module.exports = {
 	config: {
-		name: "namaz2",
+		name: "namaz",
 		aliases: ["salat"],
 		version: "1.0",
 		author: "kshitiz (Modified by Ullash)",
