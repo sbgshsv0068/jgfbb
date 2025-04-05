@@ -10,7 +10,7 @@ module.exports = {
     longDescription: {
       en: "his module displays the top 10 users based on their exp points."
     },
-    category: "economy",
+    category: "top",
     guide: {
       en: "{pn}"
     }
