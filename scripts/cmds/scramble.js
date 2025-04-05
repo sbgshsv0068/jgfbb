@@ -9,7 +9,7 @@ module.exports = {
     longDescription: { 
       en: "🔡 Unscramble the word and prove your vocabulary skills! 🏆" 
     },
-    category: "🎮 Games",
+    category: "game",
     guide: { 
       en: "⚡ 𝗧𝘆𝗽𝗲 **{p}{n}** 𝗧𝗼 𝗣𝗹𝗮𝘆!" 
     },
