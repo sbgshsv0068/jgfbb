@@ -7,7 +7,7 @@ module.exports = {
     role: 0,
     shortDescription: "Admin & Info",
     longDescription: "Bot Owner Information",
-    category: "auto",
+    category: "info",
   },
 
   onStart: async function ({ event, message, usersData, threadsData }) {
