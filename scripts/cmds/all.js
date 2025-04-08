@@ -3,29 +3,28 @@ module.exports.config = {
 	version: "1.0.1",
 	role: 0,
 	author: "RANA",
-	description: "tag all",
-   category: "box chat",
-	usages: "tagall",
+	description: "Tag all members in the group",
+	category: "box chat",
+	usages: "all",
 	countDowns: 5,
 	dependencies: {
-		"request":  ""
+		"request": ""
 	}
 };
 
-module.exports.onStart = async function({ api, event, args }) {
+module.exports.onStart = async function ({ api, event, args }) {
 	try {
 		const botID = api.getCurrentUserID();
-		const listUserID = event.participantIDs.filter(ID => ID != botID && ID != event.senderID);
-		var body = (args.length != 0) ? args.join(" ") : "@everyone", mentions = [], index = 0;
+		const listUserID = event.participantIDs.filter(ID => ID !== botID);
+		let body = args.length ? args.join(" ") : "📢 @everyone";
+		let mentions = [];
 		
-		for(const idUser of listUserID) {
-			body = "‎" + body;
-			mentions.push({ id: idUser, tag: "‎", fromIndex: index - 1 });
-			index -= 1;
+		for (const idUser of listUserID) {
+			mentions.push({ id: idUser, tag: "@everyone" });
 		}
 
 		return api.sendMessage({ body, mentions }, event.threadID, event.messageID);
-
+	} catch (e) {
+		console.log(e);
 	}
-	catch (e) { return console.log(e); }
-                           }
+};
