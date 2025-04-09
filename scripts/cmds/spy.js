@@ -2,12 +2,12 @@ module.exports = {
   config: {
     name: "spy",
     version: "1.0",
-    author: "Shikaki",
+    author: "Shikaki", //modified by RANA 😼
     countDown: 60,
     role: 0,
     shortDescription: "Get user information and avatar",
     longDescription: "Get user information and avatar by mentioning",
-    category: "image",
+    category: "info",
   },
 
    onStart: async function ({ event, message, usersData, api, args, getLang }) {
@@ -17,7 +17,7 @@ module.exports = {
     let uid;
 
     if (args[0]) {
-      // Check if the argument is a numeric UID
+
       if (/^\d+$/.test(args[0])) {
         uid = args[0];
       } else {
@@ -30,7 +30,7 @@ module.exports = {
     }
 
     if (!uid) {
-      // If no UID was extracted from the argument, use the default logic
+   
       uid = event.type === "message_reply" ? event.messageReply.senderID : uid2 || uid1;
     }
 
@@ -41,7 +41,6 @@ module.exports = {
 
       const avatarUrl = await usersData.getAvatarUrl(uid);
 
-      // Gender mapping
       let genderText;
       switch (userInfo[uid].gender) {
         case 1:
@@ -54,8 +53,7 @@ module.exports = {
           genderText = "Unknown";
       }
 
-      // Construct and send the user's information with avatar
-      const userInformation = `╔══════════════╗\n   🎭  𝗨𝘀𝗲𝗿 𝗜𝗻𝗳𝗼𝗿𝗺𝗮𝘁𝗶𝗼𝗻\n╚══════════════╝\n\n🔹 𝗡𝗮𝗺𝗲: ${userInfo[uid].name}  \n🔹 𝗣𝗿𝗼𝗳𝗶𝗹𝗲: [Click Here](${userInfo[uid].profileUrl})  \n🔹 𝗚𝗲𝗻𝗱𝗲𝗿: ${genderText}  \n🔹 𝗨𝘀𝗲𝗿 𝗧𝘆𝗽𝗲: ${userInfo[uid].type}  \n🔹 𝗙𝗿𝗶𝗲𝗻𝗱: ${userInfo[uid].isFriend ? "✅ Yes" : "❌ No"}  \n🔹 𝗕𝗶𝗿𝘁𝗵𝗱𝗮𝘆 𝗧𝗼𝗱𝗮𝘆: ${userInfo[uid].isBirthday ? "🎉 Yes" : "❌ No"}  \n\n✨ Stay Connected!  `;
+      const userInformation = `╔══════════════╗\n   🎭  𝗨𝘀𝗲𝗿 𝗜𝗻𝗳𝗼𝗿𝗺𝗮𝘁𝗶𝗼𝗻\n╚══════════════╝\n\n🔹 𝗡𝗮𝗺𝗲: ${userInfo[uid].name}  \n🔹 𝗚𝗲𝗻𝗱𝗲𝗿: ${genderText}  \n🔹 𝗨𝘀𝗲𝗿 𝗧𝘆𝗽𝗲: ${userInfo[uid].type}  \n🔹 𝗙𝗿𝗶𝗲𝗻𝗱: ${userInfo[uid].isFriend ? "✅ Yes" : "❌ No"}  \n🔹 𝗕𝗶𝗿𝘁𝗵𝗱𝗮𝘆 𝗧𝗼𝗱𝗮𝘆: ${userInfo[uid].isBirthday ? "🎉 Yes" : "❌ No"}  \n🔹 𝗣𝗿𝗼𝗳𝗶𝗹𝗲: (${userInfo[uid].profileUrl})  \n\n✨ Stay Connected!  `;
 
       message.reply({
         body: userInformation,
