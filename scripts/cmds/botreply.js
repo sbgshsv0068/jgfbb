@@ -24,7 +24,7 @@ config: {
   var idgr = `${event.threadID}`;
   var id = event.senderID;
  
-  var Messages = ‎["আহ শুনা আমার তোমার অলিতে গলিতে উম্মাহ😇😘",
+  var Messages = ‎[
           "কি গো সোনা আমাকে ডাকছ কেনো",
           "বার বার আমাকে ডাকস কেন😡",
           "আহ শোনা আমার আমাকে এতো ডাক্তাছো কেনো আসো বুকে আশো🥱",
@@ -237,40 +237,40 @@ config: {
          return api.sendMessage("️ওইই! 🙄 আবার কি চাই? খেয়ে দেয়ে কাজ নাই, শুধু আমাকে ডাকো 😑… আচ্ছা বলো, এবার কি কাণ্ড ঘটাইলা? 🤔🔥", threadID);
        };
  
-       if ((event.body.toLowerCase() == "clmm bot")) {
-         return api.sendMessage("️Swear something dog :) you've been holding on to you for a long time", threadID);
+       if ((event.body.toLowerCase() == "ahhh")) {
+         return api.sendMessage("️--এতো উফ আঃ করে না সোনা..!🫶🐸", threadID);
        };
  
-       if ((event.body.toLowerCase() == "bot cc")) {
-         return api.sendMessage("️Swear something dog :) you've been holding on to you for a long time", threadID);
+       if ((event.body.toLowerCase() == "sexy")) {
+         return api.sendMessage("️--হুম তুমিও সেক্সি..!!🐸👍", threadID);
        };
  
-       if ((event.body.toLowerCase() == "cc bot")) {
-         return api.sendMessage("️Swear something dog :) you've been holding on to you for a long time", threadID);
+       if ((event.body.toLowerCase() == "uhh")) {
+         return api.sendMessage("️--আহহহহহ্হ..!😦🎀", threadID);
        };
  
-       if ((event.body.toLowerCase() == "bot dthw too") || (event.body.toLowerCase() == "bot dthw over")) {
-         return api.sendMessage("️ that's very commendable hihi :>", threadID);
+       if ((event.body.toLowerCase() == "অনেক") || (event.body.toLowerCase() == "bot dthw over")) {
+         return api.sendMessage("️--না অল্প 🫶👍", threadID);
        };
  
-       if ((event.body.toLowerCase() == "dm bot")) {
-         return api.sendMessage("️Swear something to your dad :), you're a kid but you like to be alive :)", threadID);
+       if ((event.body.toLowerCase() == "onek")) {
+         returnapi.sendMessage("️--না অল্প 🫶👍", threadID);
        };
  
-       if ((event.body.toLowerCase() == "nobody loves me")) {
-         return api.sendMessage("️Come on, the bot loves you <3 <3", threadID);
+       if ((event.body.toLowerCase() == "ar ektu")) {
+         return api.sendMessage("️--আচ্ছা আর একটু..!!🥵🥵", threadID);
        };
  
-       if ((event.body.toLowerCase() == "does the bot love the admin bot")) {
-         return api.sendMessage("Yes, love him the most, don't try to rob me", threadID);
+       if ((event.body.toLowerCase() == "fuck")) {
+         return api.sendMessage("--fuck you nonstop.. 🫵🥵", threadID);
        };
  
-       if ((event.body.toLowerCase() == "bot im going") || (event.body.toLowerCase() == "bot im di")) {
-         return api.sendMessage("Im cc :))) m stop barking for me, but tell me im :>>", threadID);
+       if ((event.body.toLowerCase() == "yes yes") || (event.body.toLowerCase() == "umm")) {
+         return api.sendMessage("--হেই বেবি 🥵 what are yoy doing.. 😦🫵", threadID);
        };
  
-       if ((event.body.toLowerCase() == "bot go away") || (event.body.toLowerCase() == "bot cut di")) {
-         return api.sendMessage("You're gone, your dad's gone, don't make you speak :))))", threadID);
+       if ((event.body.toLowerCase() == "pok") || (event.body.toLowerCase() == "hoga")) {
+         return api.sendMessage("--মারা খাও..!!😼🔖", threadID);
        };
  
        if ((event.body.toLowerCase() == "What's the bot swearing") || (event.body.toLowerCase() == "bot cursing")) {
@@ -285,20 +285,20 @@ config: {
          return api.sendMessage("Yes I love you and everyone so much", threadID);
        };
  
-       if ((event.body.toLowerCase() == "bot goes to sleep")) {
-         return api.sendMessage("I'm a bot, you're the one who should go to sleep <3", threadID);
+       if ((event.body.toLowerCase() == "jole")) {
+         return api.sendMessage("--শুধু জলে না পুরেও..!!🙄🎀", threadID);
        };
  
-       if ((event.body.toLowerCase() == "has the bot eaten yet") || (event.body.toLowerCase() == "bot an comrade")) {
-         return api.sendMessage("I'm full when I see you eat <3", threadID);
+       if ((event.body.toLowerCase() == "bts") || (event.body.toLowerCase() == "bts ki")) {
+         return api.sendMessage("--Biggest হিজড়া In The..//-🤣👍", threadID);
        };
  
-       if ((event.body.toLowerCase() == "does the bot love me")) {
-         return api.sendMessage("Yes <3", threadID);
+       if ((event.body.toLowerCase() == "sifat")) {
+         return api.sendMessage("--মেয়ে পটাতে গেছে..!🫶🎀", threadID);
        };
  
-       if ((event.body.toLowerCase() == "does the bot have a brand") || (event.body.toLowerCase() == "does the bot fall")) {
-         return api.sendMessage("Yes <3", threadID);
+       if ((event.body.toLowerCase() == "sakin") || (event.body.toLowerCase() == "sakin ke")) {
+         return api.sendMessage("--𝐌𝐲 𝐎𝐰𝐧𝐞𝐫.. 🎀🫶", threadID);
        };
  
     if ((event.body.toLowerCase() == "oh bot")) {
