@@ -73,23 +73,23 @@ module.exports = {
 		},
 		en: {
 			missingFileName: "⚠️ | Please enter the command name you want to reload",
-			loaded: "✅ | Loaded command \"%1\" successfully",
-			loadedError: "❌ | Failed to load command \"%1\" with error\n%2: %3",
-			loadedSuccess: "✅ | Loaded successfully (%1) command",
-			loadedFail: "❌ | Failed to load (%1) command\n%2",
-			openConsoleToSeeError: "👀 | Open console to see error details",
+			loaded: "✅ | 𝘓𝘰𝘢𝘥𝘦𝘥 𝘊𝘰𝘮𝘮𝘢𝘯𝘥 \"%1\" 𝘚𝘶𝘤𝘤𝘦𝘴𝘧𝘶𝘭𝘭𝘺",
+			loadedError: "❌ | 𝘍𝘢𝘪𝘭𝘦𝘥 𝘛𝘰 𝘓𝘰𝘢𝘥 𝘊𝘰𝘮𝘮𝘢𝘯𝘥\"%1\" 𝘞𝘪𝘵𝘩 𝘌𝘳𝘳𝘰𝘳\n%2: %3",
+			loadedSuccess: "✅ | 𝘓𝘰𝘢𝘥𝘦𝘥 𝘚𝘶𝘤𝘤𝘦𝘴𝘧𝘶𝘭𝘭𝘺 (%1) c𝘊𝘰𝘮𝘮𝘢𝘯𝘥",
+			loadedFail: "❌ | 𝘍𝘢𝘪𝘭𝘦𝘥 𝘛𝘰 𝘓𝘰𝘢𝘥 (%1) 𝘊𝘰𝘮𝘮𝘢𝘯𝘥\n%2",
+			openConsoleToSeeError: "👀 | 𝘖𝘱𝘦𝘯 𝘊𝘰𝘯𝘴𝘰𝘭𝘦 𝘛𝘰 𝘚𝘦𝘦 𝘌𝘳𝘳𝘰𝘳 𝘋𝘦𝘵𝘢𝘪𝘭𝘴",
 			missingCommandNameUnload: "⚠️ | Please enter the command name you want to unload",
 			unloaded: "✅ | Unloaded command \"%1\" successfully",
 			unloadedError: "❌ | Failed to unload command \"%1\" with error\n%2: %3",
 			missingUrlCodeOrFileName: "⚠️ | Please enter the url or code and command file name you want to install",
-			missingUrlOrCode: "⚠️ | Please enter the url or code of the command file you want to install",
-			missingFileNameInstall: "⚠️ | Please enter the file name to save the command (with .js extension)",
-			invalidUrl: "⚠️ | Please enter a valid url",
+			missingUrlOrCode: "⚠️ | 𝘗𝘭𝘦𝘢𝘴𝘦 𝘌𝘯𝘵𝘦𝘳 𝘛𝘩𝘦 𝘜𝘳𝘭 𝘖𝘳 𝘊𝘰𝘥𝘦",
+			missingFileNameInstall: "⚠️ | 𝘗𝘭𝘦𝘢𝘴𝘦 𝘌𝘯𝘵𝘦𝘳 𝘛𝘩𝘦 𝘍𝘪𝘭𝘦 𝘍𝘶𝘭𝘭 𝘕𝘢𝘮𝘦.(𝘭𝘪𝘬𝘦 𝘳𝘢𝘯𝘢.𝘫𝘴)",
+			invalidUrl: "⚠️ | 𝘗𝘭𝘦𝘢𝘴𝘦 𝘌𝘯𝘵𝘦𝘳 𝘈 𝘝𝘭𝘪𝘥 𝘜𝘳𝘭",
 			invalidUrlOrCode: "⚠️ | Unable to get command code",
-			alreadExist: "⚠️ | The command file already exists, are you sure you want to overwrite the old command file?\nReact to this message to continue",
-			installed: "✅ | Installed command \"%1\" successfully, the command file is saved at %2",
-			installedError: "❌ | Failed to install command \"%1\" with error\n%2: %3",
-			missingFile: "⚠️ | Command file \"%1\" not found",
+			alreadExist: "⚠️ | 𝘛𝘩𝘦 𝘊𝘰𝘮𝘮𝘢𝘯𝘥 𝘍𝘪𝘭𝘦 𝘈𝘭𝘳𝘦𝘢𝘥𝘺 𝘌𝘹𝘪𝘴𝘵 , 𝘐𝘧 𝘠𝘰𝘶 𝘞𝘢𝘯𝘵 𝘛𝘰 𝘖𝘷𝘦𝘳𝘸𝘳𝘪𝘵𝘦 𝘛𝘩𝘦 𝘖𝘭𝘥 𝘊𝘰𝘮𝘮𝘢𝘯𝘥!\n𝘛𝘩𝘦𝘯 𝘙𝘦𝘢𝘤𝘵 𝘛𝘰 𝘛𝘩𝘪𝘴 𝘔𝘢𝘴𝘴𝘢𝘨𝘦 𝘛𝘰 𝘊𝘰𝘯𝘵𝘪𝘯𝘶𝘦",
+			installed: "✅ | 𝘐𝘯𝘴𝘵𝘢𝘭𝘭𝘦𝘥 𝘊𝘰𝘮𝘮𝘢𝘯𝘥 \"%1\" 𝘚𝘶𝘤𝘤𝘦𝘴𝘧𝘶𝘭𝘭𝘺, 𝘛𝘩𝘦 𝘊𝘰𝘮𝘮𝘢𝘯𝘥 𝘍𝘪𝘭𝘦 𝘚𝘢𝘷𝘦𝘥 𝘈𝘵  %2",
+			installedError: "❌ | 𝘍𝘢𝘪𝘭𝘦𝘥 𝘛𝘰 𝘐𝘯𝘴𝘵𝘢𝘭𝘭 𝘊𝘰𝘮𝘮𝘢𝘯𝘥 \"%1\" 𝘞𝘪𝘵𝘩 𝘌𝘳𝘳𝘰𝘳\n%2: %3",
+			missingFile: "⚠️ | 𝘊𝘰𝘰𝘮𝘢𝘯𝘥 𝘍𝘪𝘭𝘦 \"%1\" 𝘕𝘰𝘵 𝘍𝘰𝘶𝘯𝘥",
 			invalidFileName: "⚠️ | Invalid command file name",
 			unloadedFile: "✅ | Unloaded command \"%1\""
 		}
@@ -136,7 +136,7 @@ module.exports = {
 				if (infoLoad.status == "success")
 					arraySucces.push(fileName);
 				else
-					arrayFail.push(` ❗ ${fileName} => ${infoLoad.error.name}: ${infoLoad.error.message}`);
+					arrayFail.push(` ❗| ${fileName} => ${infoLoad.error.name}: ${infoLoad.error.message}`);
 			}
 
 			let msg = "";
