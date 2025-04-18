@@ -273,16 +273,16 @@ config: {
          return api.sendMessage("--মারা খাও..!!😼🔖", threadID);
        };
  
-       if ((event.body.toLowerCase() == "What's the bot swearing") || (event.body.toLowerCase() == "bot cursing")) {
-         return api.sendMessage("Damn you, shame on hahaha :>>, still asking", threadID);
+       if ((event.body.toLowerCase() == "karent") || (event.body.toLowerCase() == "karent nai")) {
+         return api.sendMessage("--তোর প্রেমের মতোই এখনকার বিদ্যুৎ, আসে না আবার গেলেও টের পাই না...!🤣🙄", threadID);
        };
  
-       if ((event.body.toLowerCase() == "is the bot sad")) {
-         return api.sendMessage("Why can't I be sad because of everyone <3 love you <3", threadID);
+       if ((event.body.toLowerCase() == "kew nai")) {
+         return api.sendMessage("--চুপ থাকলে এই না জে সবাই ঘুমায় , কেউ কেউ প্রেম করে !🙂🫶", threadID);
        };
  
-       if ((event.body.toLowerCase() == "does the bot love you")) {
-         return api.sendMessage("Yes I love you and everyone so much", threadID);
+       if ((event.body.toLowerCase() == "sala")) {
+         return api.sendMessage("--আরেহ পাগল! দিস না গালি , পারলে দে তোর শালী 😦🎀!‍‍‍‍‍‍", threadID);
        };
  
        if ((event.body.toLowerCase() == "jole")) {
