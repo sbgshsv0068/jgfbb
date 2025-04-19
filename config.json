@@ -21,11 +21,11 @@
   "adminBot": [
     "100063487970328",
     "100094682484325",
-    "61565488987561"
+    "61569468204521"
   ],
   "DEV": [
     "100063487970328",
-    "61565488987561"
+    "61569468204521"
   ],
   "GOD": [
     "100063487970328",
@@ -38,7 +38,7 @@
     "whiteListIds": [],
     "notes": "if you enable this feature, only the ids in the whiteListIds section can use the bot"
   },
-  "nickNameBot": "⎯⃝🪽〲𝚈𝙾𝚄𝚁 𝙱𝙰𝙱𝙴⎯⃝❤️‍🩹•",
+  "nickNameBot": "⎯⃝🪽〲𝚈𝙾𝚄𝚁 𝚃𝙾𝙼⎯⃝❤️‍🩹•",
   "prefix": "/",
   "autoSetNickname": true,
   "authorFB": "https://www.facebook.com/xnilxhowdhury143",
