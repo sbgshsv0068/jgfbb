@@ -6,8 +6,8 @@ const baseApiUrl = async () => {
   return base.data.api;
 };
 module.exports.config = {
-  name: "namaz",
-  aliases: ["prayer"],
+  name: "prayer",
+  aliases: ["নামাজ"],
   version: "1.0",
   author: "Mesbah Bb'e",
   countDown: 5,
@@ -15,7 +15,7 @@ module.exports.config = {
   description: {
     en: "View Prayer time",
   },
-  category: "𝗜𝗦𝗟𝗔𝗠",
+  category: "islam",
   guide: {
     en: "{pn} <city name>",
   },
