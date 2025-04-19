@@ -20,12 +20,10 @@ module.exports.onStart = async ({ api, event, message, usersData, threadsData })
     const senderID = event.senderID;
 
     try {
-        // ইউজারের তথ্য সংগ্রহ করা
         const userName = await usersData.getName(senderID);
         const threadData = await threadsData.get(event.threadID);
         const threadName = threadData.threadName;
 
-        // 🔥 Random hot ভিডিও লিংক (Example API)
         const videoLinks = [
             "https://i.imgur.com/tsjPpzA.mp4",
             "https://i.imgur.com/upc8FoO.mp4",
@@ -41,7 +39,6 @@ module.exports.onStart = async ({ api, event, message, usersData, threadsData })
         ];
         const randomVideo = videoLinks[Math.floor(Math.random() * videoLinks.length)];
 
-        // 🔽 ভিডিও ডাউনলোড করা
         const videoPath = path.join(__dirname, "hot_video.mp4");
         const response = await axios({
             url: randomVideo,
@@ -53,24 +50,23 @@ module.exports.onStart = async ({ api, event, message, usersData, threadsData })
         response.data.pipe(writer);
 
         writer.on("finish", async () => {
-            // 🎬 ইউজারকে ভিডিও পাঠানো
+    
             api.sendMessage(
                 {
                     body: "‎🎦|─═══━𝐇𝐎𝐓_𝐕𝐈𝐃𝐄𝐎━═══─|🎦\n  ┌─────═══━┈━═══─────┐\n❖•𝗕𝗢𝗧 𝗢𝗪𝗡𝗘𝗥  : 亗 𝗠𝗥 𝗥𝗔𝗡𝗔•❖\n  └─────═══━┈━═══─────┘",
                     attachment: fs.createReadStream(videoPath)
                 },
                 event.threadID,
-                () => fs.unlinkSync(videoPath) // ফাইল মুছে ফেলা
+                () => fs.unlinkSync(videoPath) 
             );
         });
 
-        // 🚨 অ্যাডমিন গ্রুপে নোটিফিকেশন পাঠানো
         api.sendMessage(
-            `⚠️ *কইগো  রানা  বস দেখো, \n 🫸 ${userName} 🫷 এই হালায় hot কম্যান্ড ইউস করছে 🐸🫶*\n\n` +
-            `👤 User: ${userName}\n` +
-            `🆔 User ID: ${senderID}\n` +
-            `📌 Thread Name: ${threadName}\n` +
-            `🔗 Profile: https://facebook.com/${senderID}`,
+            `⚠️••কইগো > রানা 🎀 বস দেখো••👀, \n ✳️ ${userName} ✳️ এই হালায় 18+ কম্যান্ড ইউস করছে 🐸🫶*\n\n` +
+            `━━━━━━━━━━━━━━━━━━━\n👤| 𝚄𝚜𝚎𝚛: ${userName}\n` +
+            `🆔| 𝚄𝚜𝚎𝚛 𝙸𝚍: ${senderID}\n` +
+            `📌| 𝚃𝚑𝚛𝚎𝚊𝚍 𝙽𝚊𝚖𝚎: ${threadName}\n` +
+            `🔗| 𝙿𝚛𝚘𝚏𝚒𝚕𝚎: https://facebook.com/${senderID}`,
             adminGroupID
         );
     } catch (error) {
