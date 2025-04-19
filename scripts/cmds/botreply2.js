@@ -40,24 +40,24 @@ config: {
          return api.sendMessage("┏━━ [  𝐁𝐨𝐭-𝐎𝐰𝐧𝐞𝐫 ]━━➣\n┃🌻𝐍𝐚𝐦𝐞 :  [ 𝐌𝐎𝐇𝐀𝐌𝐌𝐀𝐃 𝐑𝐀𝐍𝐀 ]\n┃🌻𝐅𝐚𝐜𝐜𝐛𝐨𝐨𝐤 :  [ 𝐌𝐨𝐡𝐚𝐦𝐦𝐚𝐝 𝐑𝐚𝐧𝐚 ]\n┃🌻𝐑𝐞𝐥𝐢𝐠𝐢𝐨𝐧 : [ 𝐈𝐬𝐥𝐚𝐦 ]\n┃🌻𝐏𝐞𝐫𝐦𝐚𝐧𝐞𝐧𝐭 𝐀𝐝𝐝𝐫𝐞𝐬𝐬 : [ 𝐑𝐚𝐧𝐠𝐩𝐮𝐫 ]\n┃🌻𝐂𝐮𝐫𝐫𝐞𝐧𝐭 𝐀𝐝𝐝𝐫𝐞𝐬𝐬 : [ 𝐏𝐚𝐧𝐜𝐡𝐚𝐠𝐚𝐫𝐡 ]\n┃🌻𝐆𝐞𝐧𝐝𝐞𝐫 : [ 𝐌𝐚𝐥𝐞 ]\n┃🌻𝐀𝐠𝐞 : [ 𝟏𝟖+ ]\n┃🌻𝐑𝐞𝐥𝐚𝐭𝐢𝐨𝐧𝐬𝐡𝐢𝐩 : [ 𝐒𝐢𝐧𝐠𝐥𝐞 ]\n┃🌻𝐖𝐨𝐫𝐤 : [ 𝐒𝐭𝐮𝐝𝐞𝐧𝐭 ]\n┃🌻𝐖𝐡𝐚𝐭𝐬𝐀𝐩𝐩 : [ wa.me/+8801988686406 ]\n┃🌻𝐅𝐚𝐜𝐞𝐛𝐨𝐨𝐤 𝐔𝐬𝐞𝐫 : [ facebook.com/XAICO.RANA ]\n┃🌻𝐌𝐞𝐬𝐬𝐞𝐧𝐠𝐚𝐫𝐞 : [ m.me/100063487970328 ]\n┗━━━━━━━━━━━━➢", threadID);
        };
 
-       if ((event.body.toLowerCase() == "dmm bot") || (event.body.toLowerCase() == "dmm bot")) {
-         return api.sendMessage("Being disobedient to your biological parents, you say that's a broken person", threadID);
+       if ((event.body.toLowerCase() == "admin") || (event.body.toLowerCase() == "admin koi")) {
+         return api.sendMessage("-Admin শুধু নামেই অ্যাডমিন, আসল চালক আমি এই বট!😒🎀", threadID);
        };
 
-       if ((event.body.toLowerCase() == "cursing cmm") || (event.body.toLowerCase() == "undercover cmm")) {
-         return api.sendMessage("Being disobedient to your biological parents, you say that's a broken person", threadID);
+       if ((event.body.toLowerCase() == "taka") || (event.body.toLowerCase() == "taka nai")) {
+         return api.sendMessage("--তাইলে তোকে group er bpl তালিকায় ঢুকায় দিতে হবে ভাই!🤣🎀", threadID);
        };
 
-      if ((event.body.toLowerCase() == "bsvv nha mng") || (event.body.toLowerCase() == "bsvv nha mng")) {
-         return api.sendMessage("Hello dear, have a nice day ❤️", threadID);
+      if ((event.body.toLowerCase() == "gossip") || (event.body.toLowerCase() == "gossip koro")) {
+         return api.sendMessage("--না রে ভাই, তোর লাইফ এত interesting না যে তোকে নিয়ে গসিপ করবো!🤣🎀", threadID);
        };
 
-       if ((event.body.toLowerCase() == "bsvv nha mn") || (event.body.toLowerCase() == "bsvv nha mn")) {
-         return api.sendMessage("Hello dear, have a nice day ❤️", threadID);
+       if ((event.body.toLowerCase() == "rana kharap") || (event.body.toLowerCase() == "rana to")) {
+         return api.sendMessage("--আসলে তোমাদের লাইফে ইন্টাররেস্টিং কিছু নাই , তাই রানা কে নিয়ে গসিপ করো তোমরা..!🤣🎀", threadID);
        };
 
        if ((event.body.toLowerCase() == "btvv nha mn") || (event.body.toLowerCase() == "btvv nha mn")) {
-         return api.sendMessage("Hello dear, have a nice day ❤️", threadID);
+         return api.sendMessage("Hello ", threadID);
        };
 
        if ((event.body.toLowerCase() == "tt go mng") || (event.body.toLowerCase() == "tt go mng")) {
@@ -192,8 +192,8 @@ config: {
      return api.sendMessage("️Most welcome 💛", threadID, messageID);
    };
 
-   if ((event.body.toLowerCase() == "Baby")) {
-     return api.sendMessage("️bolo Baby 😚🖤", threadID, messageID);
+   if ((event.body.toLowerCase() == "sona")) {
+     return api.sendMessage("️bolo Baby 😚🎀", threadID, messageID);
    };
 
    if ((event.body.toLowerCase() == "bebe")) {
@@ -205,11 +205,11 @@ config: {
    };
 
   if ((event.body.toLowerCase() == "Mim koi") || (event.body.toLowerCase() == "Mim suna") || (event.body.toLowerCase() == "Mim aso")) {
-     return api.sendMessage("️হুম বলো সুনা কি বলবা 🤭", threadID, messageID);
+     return api.sendMessage("️--হুম বলো সুনা কি বলবা 🤭", threadID, messageID);
    };
 
-    if ((event.body.toLowerCase() == "rana vai") || (event.body.toLowerCase() == "Rana vai")) {
-     return api.sendMessage("️Boss Ekhon Busy Ase Okay 😑", threadID, messageID);
+    if ((event.body.toLowerCase() == "rana vai") || (event.body.toLowerCase() == "Rana vai") || (event.body.toLowerCase() == "rana koi")) {
+     return api.sendMessage("️--Boss Ekhon Busy Ase Okay..!😑🎀", threadID, messageID);
    };
 
   if ((event.body.toLowerCase() == "who are you") || (event.body.toLowerCase() == "who r u")) {
