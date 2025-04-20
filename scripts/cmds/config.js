@@ -8,7 +8,7 @@ module.exports = {
 		longDescription: {
 			en: "Facebook account tools for messenger bot"
 		},
-		category: "account", 
+		category: "config", 
 		guide: {
 			en: "{pn} <command>"
 		}
