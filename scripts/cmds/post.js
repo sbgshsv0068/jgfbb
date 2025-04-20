@@ -3,7 +3,7 @@ const axios = require("axios");
 
 module.exports = {
   config: {
-    name: "fbpost",
+    name: "post",
     version: "1.0",
     author: "jfhigtfdv",
     countDown: 5,
@@ -14,7 +14,7 @@ module.exports = {
     longDescription: {
       en: "Create a new post on Facebook with text, images, and video."
     },
-    category: "Social",
+    category: "config",
     guide: {
       en: "{pn}: post"
     }
@@ -84,7 +84,7 @@ module.exports = {
       "canUserManageOffers": false
     };
 
-    return api.sendMessage(`Choose an audience that can see this article of yours\n1. Everyone\n2. Friend\n3. Only me`, threadID, (e, info) => {
+    return api.sendMessage(`𝐂𝐡𝐨𝐨𝐬𝐞 𝐀𝐧 𝐀𝐮𝐝𝐢𝐞𝐧𝐜𝐞\n𝟷. 𝙴𝚟𝚛𝚢𝚘𝚗𝚎\n𝟸. 𝙵𝚛𝚒𝚎𝚗𝚍\n𝟹. 𝙾𝚗𝚕𝚢 𝙼𝚎`, threadID, (e, info) => {
       global.GoatBot.onReply.set(info.messageID, {
         commandName,
         messageID: info.messageID,
@@ -118,7 +118,7 @@ module.exports = {
       if (!["1", "2", "3"].includes(body)) return api.sendMessage('Please choose one of the three options above', threadID, messageID);
       formData.input.audience.privacy.base_state = body == 1 ? "EVERYONE" : body == 2 ? "FRIENDS" : "SELF";
       api.unsendMessage(handleReply.messageID, () => {
-        api.sendMessage(`Reply to this message with the content of the article. If you want to leave it blank, please reply with 0.`, threadID, (e, info) => {
+        api.sendMessage(`-𝘙𝘦𝘱𝘭𝘺 𝘛𝘰 𝘛𝘩𝘪𝘴 𝘔𝘢𝘢𝘴𝘴𝘢𝘨𝘦 𝘞𝘩𝘵𝘢 𝘠𝘰𝘶 𝘞𝘢𝘯𝘵 𝘛𝘰 𝘗𝘰𝘴𝘵. 🎀\n𝘐𝘧 𝘠𝘰𝘶 𝘞𝘢𝘯𝘵 𝘛𝘰 𝘓𝘦𝘢𝘷𝘦 𝘐𝘵 𝘉𝘭𝘢𝘯𝘬 𝘛𝘰 𝘙𝘦𝘱𝘭𝘺 0.`, threadID, (e, info) => {
           global.GoatBot.onReply.set(info.messageID, {
             commandName,
             messageID: info.messageID,
@@ -190,7 +190,7 @@ module.exports = {
             fs.unlinkSync(__dirname + "/cache/imagePost.png");
             fs.unlinkSync(__dirname + "/cache/videoPost.mp4");
           } catch (e) {}
-          return api.sendMessage(`» 𝗣𝗼𝘀𝘁 𝗖𝗿𝗲𝗮𝘁𝗲𝗳 𝗦𝘂𝗰𝗰𝗲𝘀𝘀𝗳𝘂𝗹𝗹𝘆 ✅\n» 𝗣𝗼𝘀𝘁 𝗜𝗱: ${postID}\n» 𝗣𝗼𝘀𝘁 𝗨𝗿𝗹: ${urlPost}`, threadID, messageID);
+          return api.sendMessage(`» 𝗣𝗼𝘀𝘁 𝗖𝗿𝗲𝗮𝘁𝗲𝗱 𝗦𝘂𝗰𝗰𝗲𝘀𝘀𝗳𝘂𝗹𝗹𝘆 ✅\n» 𝗣𝗼𝘀𝘁 𝗜𝗱: ${postID}\n» 𝗣𝗼𝘀𝘁 𝗨𝗿𝗹: ${urlPost}`, threadID, messageID);
         } catch (e) {
           // Handle any errors that may occur during the post creation.
           return api.sendMessage(`𝗣𝗼𝘀𝘁 𝗖𝗿𝗲𝗮𝘁𝗶𝗼𝗻 𝗙𝗮𝗶𝗹𝗲𝗱 ❌, 𝗣𝗹𝗲𝗮𝘀𝗲 𝗧𝗿𝘆 𝗔𝗴𝗮𝗶𝗻 𝗟𝗮𝘁𝗲𝗿`, threadID, messageID);
