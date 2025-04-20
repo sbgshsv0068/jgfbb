@@ -11,7 +11,7 @@
     longDescription: {
       en: "ðŸ”°Checking Bot's pingðŸ”°"
     },
-    category: "System",
+    category: "system",
     guide: {
       en: "{pn}"
     }
