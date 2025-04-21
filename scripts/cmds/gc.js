@@ -16,7 +16,7 @@ config: {
 	},
 
  onStart: async function ({ api, event, args }) {
-	 if (args.length == 0) return api.sendMessage(`You can use:\n/gc emoji [icon]\n\n/gc name [the box name needs to be changed]\n\n/gc image [rep any image needs to be set as group chat image]\n\n/gc admin [tag] => it will give qtv to the person tagged\n\n/gc info => All group information !
+	 if (args.length == 0) return api.sendMessage(`🎀..𝐘𝐨𝐮 𝐂𝐚𝐧 𝐔𝐬𝐞..🎀\n/𝚐𝚌 𝚎𝚖𝚘𝚓𝚒 [𝚒𝚌𝚘𝚗]\n\n/𝚐𝚌 𝚗𝚊𝚖𝚎 [𝚎𝚗𝚝𝚎𝚛 𝚋𝚘𝚡 𝚗𝚊𝚖𝚎]\n\n/𝚐𝚌 𝚒𝚖𝚊𝚐𝚎 [𝚛𝚎𝚙𝚕𝚢 𝚊𝚗𝚢 𝚒𝚖𝚊𝚐𝚎 𝚝𝚘 𝚜𝚎𝚝 𝚐𝚛𝚘𝚞𝚙 𝚒𝚖𝚊𝚐𝚎]\n\n/𝚐𝚌 𝚊𝚍𝚖𝚒𝚗 [𝚝𝚊𝚐] => 𝚒𝚝 𝚠𝚒𝚕𝚕 𝚐𝚒𝚟𝚎 𝚚𝚝𝚟 𝚝𝚘 𝚝𝚑𝚎 𝚙𝚎𝚛𝚜𝚘𝚗 𝚝𝚊𝚐𝚐𝚎𝚍\n\n/𝚐𝚌 𝚒𝚗𝚏𝚘 => 𝙰𝚕𝚕 𝙶𝚛𝚘𝚞𝚙 𝙸𝚗𝚏𝚘𝚛𝚖𝚊𝚝𝚒𝚘𝚗 !
 `, event.threadID, event.messageID);
 
 
@@ -51,7 +51,7 @@ const findd = threadInfo.adminIDs.find(el => el.id == namee);
 const find = threadInfo.adminIDs.find(el => el.id == api.getCurrentUserID());
 const finddd = threadInfo.adminIDs.find(el => el.id == event.senderID);
 
-if (!finddd) return api.sendMessage("You are not a box admin ?", event.threadID, event.messageID);		
+if (!finddd) return api.sendMessage("𝚂𝚘𝚛𝚛𝚢 𝚈𝚘𝚞 𝙰𝚛𝚎 𝙽𝚘𝚝 𝙰 𝙱𝚘𝚡 𝙰𝚍𝚖𝚒𝚗 ?", event.threadID, event.messageID);		
 if(!find) {api.sendMessage("Don't throw the admin using the cock?", event.threadID, event.messageID)}
 if (!findd) {api.changeAdminStatus(event.threadID, namee, true);}
 else api.changeAdminStatus(event.threadID, namee, false)
