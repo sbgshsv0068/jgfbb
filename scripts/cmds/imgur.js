@@ -8,7 +8,7 @@ module.exports.config = {
   author: "SK-SIDDIK-KHAN", 
   countDown: 5,
   role: 0,
-  category: "media",
+  category: "imgur",
   description: "convert image/video into Imgur link",
   usages: "reply [image, video]"
 };
