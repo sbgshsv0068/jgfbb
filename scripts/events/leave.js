@@ -1,5 +1,5 @@
 const { getTime, drive } = global.utils;
-
+ 
 module.exports = {
 	config: {
 		name: "leave",
@@ -7,7 +7,7 @@ module.exports = {
 		author: "NTKhang",
 		category: "events"
 	},
-
+ 
 	langs: {
 		vi: {
 			session1: "sáng",
@@ -23,12 +23,12 @@ module.exports = {
 			session2: "noon",
 			session3: "afternoon",
 			session4: "evening",
-			leaveType1: "left",
-			leaveType2: "⚠️ ব্রেকিং নিউজ: {userName} উড়ে গেল! {type} দলে তার আর জায়গা নেই..! 🚫😂",
-			defaultLeaveMessage: "🚀 {userName} এসে গেছে! {type} দলে এবার জমে যাবে আড্ডা! 😎🔥"
+			leaveType1: "- হয়তো বুঝে গেছে সে এই গ্রুপের যোগ্য না 😦, তাই চুপি চুপি চলে গেলো 🤣",
+			leaveType2: "- হয়তো গ্রুপে থাকার যোগ্য না 😦, তাই কিক খেলো ",
+			defaultLeaveMessage: "{userName} {type} গ্রুপ থেকে 🤣"
 		}
 	},
-
+ 
 	onStart: async ({ threadsData, message, event, api, usersData, getLang }) => {
 		if (event.logMessageType == "log:unsubscribe")
 			return async function () {
@@ -40,17 +40,17 @@ module.exports = {
 				if (leftParticipantFbId == api.getCurrentUserID())
 					return;
 				const hours = getTime("HH");
-
+ 
 				const threadName = threadData.threadName;
 				const userName = await usersData.getName(leftParticipantFbId);
-
+ 
 				// {userName}   : name of the user who left the group
 				// {type}       : type of the message (leave)
 				// {boxName}    : name of the box
 				// {threadName} : name of the box
 				// {time}       : time
 				// {session}    : session
-
+ 
 				let { leaveMessage = getLang("defaultLeaveMessage") } = threadData.data;
 				const form = {
 					mentions: leaveMessage.match(/\{userNameTag\}/g) ? [{
@@ -58,7 +58,7 @@ module.exports = {
 						id: leftParticipantFbId
 					}] : null
 				};
-
+ 
 				leaveMessage = leaveMessage
 					.replace(/\{userName\}|\{userNameTag\}/g, userName)
 					.replace(/\{type\}/g, leftParticipantFbId == event.author ? getLang("leaveType1") : getLang("leaveType2"))
@@ -72,16 +72,16 @@ module.exports = {
 								getLang("session3") :
 								getLang("session4")
 					);
-
+ 
 				form.body = leaveMessage;
-
+ 
 				if (leaveMessage.includes("{userNameTag}")) {
 					form.mentions = [{
 						id: leftParticipantFbId,
 						tag: userName
 					}];
 				}
-
+ 
 				if (threadData.data.leaveAttachment) {
 					const files = threadData.data.leaveAttachment;
 					const attachments = files.reduce((acc, file) => {
