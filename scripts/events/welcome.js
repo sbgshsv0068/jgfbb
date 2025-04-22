@@ -1,7 +1,7 @@
 const { getTime, drive } = global.utils;
 if (!global.temp.welcomeEvent)
 	global.temp.welcomeEvent = {};
-
+ 
 module.exports = {
 	config: {
 		name: "welcome",
@@ -9,7 +9,7 @@ module.exports = {
 		author: "NTKhang",
 		category: "events"
 	},
-
+ 
 	langs: {
 		vi: {
 			session1: "sáng",
@@ -22,17 +22,17 @@ module.exports = {
 			defaultWelcomeMessage: "Xin chào {userName}.\nChào mừng bạn đến với {boxName}.\nChúc bạn có buổi {session} vui vẻ!"
 		},
 		en: {
-			session1: "সকাল 🌄",
-			session2: "দুপুর 🌞",
-			session3: "বিকাল 🏙️",
-			session4: "সন্ধ্যা 🌃",
-			welcomeMessage: "‎ ╔✦✦✦✦❖❖❖✦✦✦✦╗\n             ✨ ﷽ ✨\n🌸 আসসালামু আলাইকুম.!🥰\n ╚✦✦✦✦❖❖❖✦✦✦✦╝\n\n💝 আপনাদের গ্রুপে আমাকে যুক্ত করার জন্য অসংখ্য ধন্যবাদ! 😍🎉\n\n📢 🔹 বট প্রিফিক্স: %1 \n📢🔹 বটের সকল কমান্ড দেখতে টাইপ করুন: %1help 📜\n\n💫🌷 আপনাদের বিনোদন দেওয়ার জন্যই আমাকে তৈরি করা হয়েছে..! 😃🔥\n💫🌷 তাই মজা করুন, {session} উপভোগ করুন, আর দারুণ সময় কাটান..! 🥳🎊\n\n😕📢 তবে যদি কখনো আমার কথায় কষ্ট পান, দয়া করে ক্ষমাসুন্দর দৃষ্টিতে দেখবেন..! 😊🙏\n\n💖 ধন্যবাদ! ভালো থাকুন, সুস্থ থাকুন! 💖‎",
-			multiple1: "you",
-			multiple2: "you guys",
-			defaultWelcomeMessage: `‎🌺✨ 𝗔𝘀𝘀𝗮𝗹𝗮𝗺𝘂 𝗔𝗹𝗮𝗶𝗸𝘂𝗺 ✨🌺\n💖 𝗛𝗲𝗹𝗹𝗼 {userName},\n🌟 𝗪𝗲𝗹𝗰𝗼𝗺𝗲 {multiple} আমাদের প্রিয় {boxName} গ্রুপে! 🎉🎊\n\💐 উপভোগ করুন শুভ {session} 💕\n\n📜 গ্রুপের নিয়ম-কানুন মেনে চলুন 📜\n🤝 সবার সাথে বন্ধুত্বপূর্ণ আচরণ করুন ❤️\n✨ গ্রুপের সৌন্দর্য বজায় রাখুন 🌸\n\n🐔🌬 আপনাকে আমাদের এই গ্রুপে আসার জন্য অনেক অনেক শুভেচ্ছা! 🎊🥰`
+			session1: "𝘔𝘰𝘳𝘯𝘪𝘯𝘨",
+			session2: "𝘕𝘰𝘰𝘯",
+			session3: "𝘈𝘧𝘵𝘦𝘳𝘯𝘰𝘰𝘯",
+			session4: "𝘌𝘷𝘦𝘯𝘪𝘯𝘨",
+			welcomeMessage: "𝘛𝘩𝘢𝘯𝘬 𝘠𝘰𝘶 𝘍𝘰𝘳 𝘐𝘯𝘷𝘪𝘵𝘪𝘯𝘨 𝘔𝘦 𝘛𝘰 𝘛𝘩𝘦 𝘎𝘳𝘰𝘶𝘱\n𝘉𝘰𝘵 𝘗𝘳𝘦𝘧𝘪𝘹: %1\n𝘛𝘺𝘱𝘦 /𝘩𝘦𝘭𝘱 𝘛𝘰 𝘚𝘦𝘦 𝘈𝘭𝘭 𝘊𝘰𝘮𝘮𝘢𝘯𝘥",
+			multiple1: "𝘠𝘰𝘶",
+			multiple2: "𝘠𝘰𝘶 𝘎𝘶𝘺𝘴",
+			defaultWelcomeMessage: `👋 H𝘦𝘭𝘭𝘰 {userName}.🎀\𝘯𝘞𝘦𝘭𝘤𝘰𝘮𝘦 {multiple} 𝘛𝘰 𝘛𝘩𝘦 𝘊𝘩𝘢𝘵 𝘎𝘳𝘰𝘶𝘱: {boxName}\n𝘏𝘢𝘷𝘦 𝘈 𝘕𝘪𝘤𝘦 {session} 😊`
 		}
 	},
-
+ 
 	onStart: async ({ threadsData, message, event, api, getLang }) => {
 		if (event.logMessageType == "log:subscribe")
 			return async function () {
@@ -53,12 +53,12 @@ module.exports = {
 						joinTimeout: null,
 						dataAddedParticipants: []
 					};
-
+ 
 				// push new member to array
 				global.temp.welcomeEvent[threadID].dataAddedParticipants.push(...dataAddedParticipants);
 				// if timeout is set, clear it
 				clearTimeout(global.temp.welcomeEvent[threadID].joinTimeout);
-
+ 
 				// set new timeout
 				global.temp.welcomeEvent[threadID].joinTimeout = setTimeout(async function () {
 					const threadData = await threadsData.get(threadID);
@@ -70,10 +70,10 @@ module.exports = {
 					const userName = [],
 						mentions = [];
 					let multiple = false;
-
+ 
 					if (dataAddedParticipants.length > 1)
 						multiple = true;
-
+ 
 					for (const user of dataAddedParticipants) {
 						if (dataBanned.some((item) => item.id == user.userFbId))
 							continue;
@@ -111,9 +111,9 @@ module.exports = {
 										? getLang("session3")
 										: getLang("session4")
 						);
-
+ 
 					form.body = welcomeMessage;
-
+ 
 					if (threadData.data.welcomeAttachment) {
 						const files = threadData.data.welcomeAttachment;
 						const attachments = files.reduce((acc, file) => {
@@ -130,3 +130,4 @@ module.exports = {
 			};
 	}
 };
+ 
