@@ -85,7 +85,7 @@ module.exports = {
       const command = commands.get(commandName) || commands.get(aliases.get(commandName));
  
       if (!command) {
-        await message.reply(`Command "${commandName}" not found.`);
+        await message.reply(`🟡| 𝙲𝚘𝚖𝚖𝚊𝚗𝚍 "${commandName}" 𝙽𝚘𝚝 𝙵𝚘𝚞𝚗𝚍.`);
       } else {
         const configCommand = command.config;
         const author = configCommand.author || "Unknown";
@@ -102,21 +102,13 @@ module.exports = {
         const formattedCommandName = apply(configCommand.name, bold);
  
         const response = `
-╭────[ 𝗡𝗔𝗠𝗘 ]─────❖
-‎├‣ ${configCommand.name}
-‎├── ❯ 𝗜𝗡𝗙𝗢 ♐
-‎├‣ 𝙳𝚎𝚜𝚌𝚛𝚒𝚙𝚝𝚒𝚘𝚗: ${longDescription}
-‎├‣ 𝙾𝚝𝚑𝚎𝚛 𝙽𝚊𝚖𝚎: ${configCommand.aliases ? configCommand.aliases.join(", ") : "𝙳𝚘 𝚗𝚘𝚝 𝚑𝚊𝚟𝚎"}
-‎├‣ 𝚅𝚎𝚛𝚜𝚒𝚘𝚗: ${configCommand.version || "1.0"}
-‎├‣ 𝚁𝚘𝚕𝚎: ${roleText}
-‎├‣ 𝚃𝚒𝚖𝚎: ${configCommand.countDown || 1}s
-‎├‣ 𝙰𝚞𝚝𝚑𝚘𝚛: ${author}
-‎├── ❯ 𝗨𝗦𝗔𝗚𝗘 ♐
-‎├‣ ${usage}
-‎├──❯ 𝗡𝗢𝗧𝗘𝗦 ♐
-‎├‣ 𝐃𝐨𝐧𝐭 𝐒𝐩𝐚𝐦 𝐇𝐚𝐫𝐞.. ⚠️
-‎├‣ 𝐄𝐧𝐣𝐨𝐲 𝐑𝟒𝐍𝟒 𝐁𝐎𝐓.. 🤖
-‎╰──────────────❖`;
+  ╭────────────⊙
+  │ 🔶| 𝙽𝚊𝚖𝚎 ${formattedCommandName}
+  ├──• 𝗜𝗻𝗳𝗼 •────⊙
+  │ 📝| 𝙳𝚎𝚜𝚌𝚛𝚒𝚙𝚝𝚒𝚘𝚗: ${formattedDescription}
+  │ 👑| 𝙰𝚞𝚝𝚑𝚘𝚛: ${author}
+  │ 🤝| 𝙶𝚞𝚒𝚍𝚎: ${formattedUsage}
+  ╰────────────⊙`;
  
         await message.reply(response);
       }
@@ -124,4 +116,4 @@ module.exports = {
   },
 };
 const wrapper = new GoatWrapper(module.exports);
-wrapper.applyNoPrefix({ allowPrefix: true });qq
+wrapper.applyNoPrefix({ allowPrefix: true });
