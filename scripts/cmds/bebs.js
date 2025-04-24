@@ -212,8 +212,8 @@ config: {
      return api.sendMessage("️--Boss Ekhon Busy Ase Okay..!😑🎀", threadID, messageID);
    };
  
-  if ((event.body.toLowerCase() == "who are you") || (event.body.toLowerCase() == "who r u")) {
-     return api.sendMessage("️I Am R4N4-BOT, An AI Based Messenger Chatbot.", threadID, messageID);
+  if ((event.body.toLowerCase() == "mim koi") || (event.body.toLowerCase() == "mim koi")) {
+     return api.sendMessage("️--বলো কি বলবা 🐸🫶.", threadID, messageID);
    };
  
   if (event.body.indexOf("bebs") == 0 || (event.body.toLowerCase() == "beb") || (event.body.indexOf("বট") == 0)) {
