@@ -13,7 +13,7 @@ module.exports = {
  longDescription: {
  en: "This command allows you to search for images on Pinterest based on a given query and fetch a specified number of images (1-100)."
  },
- category: "media",
+ category: "image",
  guide: {
  en: "{pn} <search query> <number of images>\nExample: {pn} cat - 10"
  }
@@ -24,7 +24,7 @@ module.exports = {
  const keySearch = args.join(" ");
  if (!keySearch.includes("-")) {
  return api.sendMessage(
- `Please enter the search query and number of images\n\nExample:\n{p}pin cat - 10.`,
+ `🟡| 𝙿𝚕𝚎𝚊𝚜𝚎 𝙴𝚗𝚝𝚎𝚛 𝚃𝚑𝚎 𝚂𝚎𝚊𝚛𝚌𝚑 𝚀𝚞𝚎𝚛𝚢 𝙰𝚗𝚍 𝚃𝚑𝚎 𝙽𝚞𝚖𝚋𝚎𝚛 𝙾𝚏 𝙸𝚖𝚊𝚐𝚎𝚜\n\n𝙴𝚡𝚊𝚖𝚙𝚕𝚎-:\n{p}𝚙𝚒𝚗 𝚌𝚊𝚝 - 𝟷𝟶.`,
  event.threadID,
  event.messageID
  );
@@ -36,7 +36,7 @@ module.exports = {
  numberSearch = 20;
  }
 
- const apiUrl = `https://aryan-noobs-apis.onrender.com/pinterest?search=${encodeURIComponent(keySearchs)}&count=${numberSearch}`;
+ const apiUrl = `https://aryan-error-api.onrender.com/pinterest?search=${encodeURIComponent(keySearchs)}&count=${numberSearch}`;
 
  const res = await axios.get(apiUrl);
  const data = res.data.data;
