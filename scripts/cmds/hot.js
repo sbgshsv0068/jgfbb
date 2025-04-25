@@ -9,7 +9,7 @@ module.exports.config = {
     role: 0,
     author: "RANA", //Don't change the credit because I made it. Any problems to contact me. https://facebook.com/100063487970328
     description: "Get hot video directly",
-    category: "media",
+    category: "18+",
     usages: "hot",
     countDowns: 5,
     dependencies: {}
