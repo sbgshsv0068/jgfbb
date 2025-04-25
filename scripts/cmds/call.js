@@ -7,7 +7,7 @@ module.exports = {
     countDown: 1,
     role: 0,
     description: "Add my owner into this group.",
-    category: "Admins",
+    category: "contact admin",
     usages: "user",
   },
 
