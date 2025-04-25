@@ -9,7 +9,7 @@ module.exports = {
     author: "Eijah Noah",
     countDown: 2,
     role: 2,
-    category: "owner",
+    category: "upload",
     guide: {
       vi: "{pn} text",
       en: "{pn} create <text> or {pn} fileName"
