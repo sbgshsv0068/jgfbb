@@ -14,13 +14,13 @@ module.exports = {
 
 	onStart: async function ({ api, event, args }) {
 		if (!event.messageReply || !event.messageReply.messageID) {
-			api.sendMessage("Please reply to a bot's message to rewrite it.", event.threadID, event.messageID);
+			api.sendMessage("♻️| 𝘗𝘭𝘦𝘢𝘴𝘦 𝘙𝘦𝘱𝘭𝘺 𝘛𝘰 𝘈 𝘉𝘰𝘵'𝘴 𝘔𝘢𝘴𝘴𝘢𝘨𝘦 𝘛𝘰 𝘌𝘥𝘪𝘵 𝘐𝘵.", event.threadID, event.messageID);
 			return;
 		}
 
 		const newMessage = args.join(" ");
 		if (!newMessage) {
-			api.sendMessage("Please provide the new message content.", event.threadID, event.messageID);
+			api.sendMessage("🤦‍♂️| 𝘗𝘭𝘦𝘢𝘴𝘦 𝘗𝘳𝘰𝘷𝘪𝘥𝘦 𝘛𝘩𝘦 𝘕𝘦𝘸 𝘔𝘢𝘴𝘴𝘢𝘨𝘦.", event.threadID, event.messageID);
 			return;
 		}
 
@@ -33,7 +33,7 @@ module.exports = {
 			});
 		} catch (error) {
 			console.error("Error editing message:", error);
-			api.sendMessage("Failed to rewrite the message. Make sure the bot has permission and try again.", event.threadID, event.messageID);
+			api.sendMessage("Failed to edit this message. Sorry Boss 😞.", event.threadID, event.messageID);
 		}
 	},
 };
