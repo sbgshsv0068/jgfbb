@@ -5,7 +5,7 @@ module.exports = {
     author: "Riley",
     role: 0,
     shortDescription: "give coins to another user",
-    category: "Economy",
+    category: "game",
     guide: "{p}pay <user_id> <amount>",
   },
   onStart: async function ({ api, event, args, usersData }) {
