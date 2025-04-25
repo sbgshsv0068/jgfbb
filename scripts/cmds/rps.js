@@ -36,7 +36,7 @@ module.exports = {
  version: "1.0",
  author: "RANA",
  shortDescription: "Play rock-paper-scissors game with the bot using emoji.",
- category: "fun",
+ category: "game",
  guide: "{prefix}rps <✊|✋|✌️>"
  },
  onStart: async function ({ message, args }) {
