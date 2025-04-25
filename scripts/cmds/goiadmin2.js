@@ -5,7 +5,7 @@ module.exports = {
         role: 0,
         shortDescription: " ",
         longDescription: "",
-        category: "BOT",
+        category: "contact admin",
         guide: "{pn}"
     },
 
