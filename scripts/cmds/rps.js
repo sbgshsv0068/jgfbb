@@ -4,7 +4,7 @@ module.exports = {
  version: "1.0",
  author: "Loid",
  shortDescription: "Play rock-paper-scissors game with the bot.",
- category: "fun",
+ category: "game",
  guide: "{prefix}rps <rock|paper|scissors>"
  },
  onStart: async function ({ message, args }) {
@@ -16,25 +16,25 @@ module.exports = {
 
  const botChoice = choices[Math.floor(Math.random() * choices.length)];
 
- message.reply(`You chose ${userChoice}. I chose ${botChoice}.`);
+ message.reply(`𝐘𝐨𝐮 𝐂𝐡𝐨𝐬𝐞 ${userChoice}. 𝐈 𝐂𝐡𝐨𝐬𝐞 ${botChoice}.`);
 
  if (userChoice.toLowerCase() === botChoice) {
- message.reply("It's a tie!");
+ message.reply("𝐈𝐭'𝐬 𝐀 𝐓𝐢𝐞!");
  } else if (
  (userChoice.toLowerCase() === "rock" && botChoice === "scissors") ||
  (userChoice.toLowerCase() === "paper" && botChoice === "rock") ||
  (userChoice.toLowerCase() === "scissors" && botChoice === "paper")
  ) {
- message.reply("Congratulations! You won!");
+ message.reply("𝐂𝐨𝐧𝐠𝐫𝐚𝐭𝐮𝐥𝐚𝐭𝐢𝐨𝐧𝐬, 𝐘𝐨𝐮 𝐖𝐨𝐧..!😗🎀");
  } else {
- message.reply("I win! Better luck next time!");
+ message.reply("𝐈 𝐖𝐢𝐧, 𝐁𝐞𝐭𝐭𝐞𝐫 𝐋𝐮𝐜𝐤 𝐍𝐞𝐱𝐭 𝐓𝐢𝐦𝐞..!😗🎀");
  }
  },
 };module.exports = {
  config: {
  name: "rps",
  version: "1.0",
- author: "Your name",
+ author: "RANA",
  shortDescription: "Play rock-paper-scissors game with the bot using emoji.",
  category: "fun",
  guide: "{prefix}rps <✊|✋|✌️>"
@@ -43,7 +43,7 @@ module.exports = {
  const choices = ["✊", "✋", "✌️"];
  const userChoice = args[0];
  if (!userChoice || !choices.includes(userChoice)) {
- return message.reply("Please choose either ✊, ✋, or ✌️!");
+ return message.reply("𝘗𝘭𝘦𝘢𝘴𝘦 𝘊𝘩𝘰𝘰𝘴𝘦 𝘌𝘪𝘵𝘩𝘦𝘳 ✊, ✋, 𝘰𝘳 ✌️!");
  }
 
  const botChoice = choices[Math.floor(Math.random() * choices.length)];
@@ -51,15 +51,15 @@ module.exports = {
  message.reply(`You chose ${userChoice}. I chose ${botChoice}.`);
 
  if (userChoice === botChoice) {
- message.reply("It's a tie! ⚖️");
+ message.reply("𝘐𝘵𝘴 𝘈 𝘛𝘪𝘦..!😗🎀! ⚖️");
  } else if (
  (userChoice === "✊" && botChoice === "✌️") ||
  (userChoice === "✋" && botChoice === "✊") ||
  (userChoice === "✌️" && botChoice === "✋")
  ) {
- message.reply("╔════ஜ۩۞۩ஜ════╗\n\nCongratulations! You won! 🎉\n\n╚════ஜ۩۞۩ஜ════╝");
+ message.reply("𝘊𝘰𝘯𝘨𝘳𝘢𝘵𝘶𝘭𝘢𝘵𝘪𝘰𝘯𝘴, 𝘠𝘰𝘶 𝘞𝘰𝘯..!😗🎀");
  } else {
- message.reply("╔════ஜ۩۞۩ஜ═══╗\n\nI win! Better luck next time! 😎\n\n╚════ஜ۩۞۩ஜ═══╝");
+ message.reply("𝘐 𝘞𝘪𝘯, 𝘉𝘦𝘵𝘵𝘦𝘳 𝘓𝘶𝘤𝘬 𝘕𝘦𝘹𝘵 𝘛𝘪𝘮𝘦..!😗🎀");
  }
  },
 };
