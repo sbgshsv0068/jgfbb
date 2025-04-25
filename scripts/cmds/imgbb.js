@@ -15,7 +15,7 @@ module.exports = {
         author: "ArYAN",
         shortDescription: "imgur upload",
         countDown: 0,
-        category: "imgur",
+        category: "upload",
         guide: {
             en: '[your imgur link]'
         }
