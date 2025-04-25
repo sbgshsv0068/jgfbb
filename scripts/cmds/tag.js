@@ -25,7 +25,7 @@ module.exports = {
 
     },
 
-    category: "tools",
+    category: "box chat",
 
     guide: {
 
