@@ -1,6 +1,6 @@
 const { GoatWrapper } = require("fca-liane-utils");
 const { getPrefix } = global.utils;
-const { commands, aliases } = global.GoatBot;
+const { commands } = global.GoatBot;
 
 function apply(text, fontMap) {
   return text.replace(/[a-zA-Z0-9]/g, (char) => fontMap[char] || char);
@@ -47,59 +47,42 @@ module.exports = {
     const prefix = getPrefix(threadID);
 
     if (args.length === 0) {
-      // Show all categories
-      const categories = {};
-      for (const [name, value] of commands) {
-        const category = value.config.category || "Uncategorized";
-        if (!categories[category]) categories[category] = [];
-        categories[category].push(name);
+      // Show all category names only
+      const catSet = new Set();
+      for (const [, cmd] of commands) {
+        const cat = (cmd.config.category || "Uncategorized").toLowerCase();
+        if (cat !== "info") catSet.add(cat);
       }
 
-      let msg = "";
-      for (const [category, cmds] of Object.entries(categories)) {
-        if (category !== "info") {
-          const boldCategory = apply(category.toUpperCase(), bold);
-          let section = `\n‎╭───[ ${boldCategory} ] `;
-          for (let i = 0; i < cmds.length; i += 2) {
-            const row = cmds
-              .slice(i, i + 2)
-              .map(cmd => `‎‎⋄  ${apply(cmd, sans)}`)
-              .join(" ");
-            section += `\n│ ${row}`;
-          }
-          section += `\n‎╰────────────◊`;
-          msg += section;
-        }
-      }
+      const list = Array.from(catSet).map(cat => `› ${apply(cat, bold)}`).join("\n");
 
-      await message.reply(msg);
-    } else {
-      // Show specific category
-      const inputCat = args[0].toLowerCase();
-      const matchedCommands = [...commands].filter(
-        ([, cmd]) => (cmd.config.category || "").toLowerCase() === inputCat
-      );
-
-      if (matchedCommands.length === 0) {
-        await message.reply(`❌ | 𝘊𝘢𝘵𝘦𝘨𝘰𝘳𝘺  "${inputCat}" 𝘕𝘰𝘵 𝘍𝘰𝘶𝘯𝘥.`);
-        return;
-      }
-
-      const boldCategory = apply(inputCat.toUpperCase(), bold);
-      let section = `\n‎╭─────────────╮\n│     ✦ ${boldCategory} ✦`;
-
-      for (let i = 0; i < matchedCommands.length; i += 1) {
-        const row = matchedCommands
-          .slice(i, i + 1)
-          .map(([name]) => `├── ❯   ${apply(name, sans)}`)
-          .join(" ");
-        section += `\n${row}`;
-      }
-
-      section += `\n‎╰─────────────╯`;
-      await message.reply(section);
+      return message.reply(`  ✦ 𝗔𝘃𝗮𝗶𝗹𝗮𝗯𝗹𝗲 𝗖𝗮𝘁𝗲𝗴𝗼𝗿𝗶𝗲𝘀 ✦ \n❖────────────────❖\n\n${list}\n\n❖────────────────❖\n𝘜𝘴𝘦: ${prefix}𝘤𝘢𝘵𝘦𝘨𝘰𝘳𝘺 [categoryName]\n 𝘌𝘹𝘢𝘮𝘱𝘭𝘦 : ${prefix}𝘤𝘢𝘵𝘦𝘨𝘰𝘳𝘺 𝘧𝘶𝘯 `);
     }
-  },
+
+    // Show specific category commands
+    const inputCat = args[0].toLowerCase();
+    const matchedCommands = [...commands].filter(
+      ([, cmd]) => (cmd.config.category || "").toLowerCase() === inputCat
+    );
+
+    if (matchedCommands.length === 0) {
+      return message.reply(`❌ | 𝘊𝘢𝘵𝘦𝘨𝘰𝘳𝘺 "${inputCat}" 𝘕𝘰𝘵 𝘍𝘰𝘶𝘯𝘥.`);
+    }
+
+    const boldCategory = apply(inputCat.toUpperCase(), bold);
+    let section = `\n‎╭─────────────╮\n│     ✦ ${boldCategory} ✦`;
+
+    for (let i = 0; i < matchedCommands.length; i++) {
+      const row = matchedCommands
+        .slice(i, i + 1)
+        .map(([name]) => `├── ❯   ${apply(name, sans)}`)
+        .join(" ");
+      section += `\n${row}`;
+    }
+
+    section += `\n‎╰─────────────╯`;
+    return message.reply(section);
+  }
 };
 
 const wrapper = new GoatWrapper(module.exports);
