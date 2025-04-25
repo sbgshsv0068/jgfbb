@@ -1,6 +1,6 @@
 module.exports = {
 	config: {
-		name: "rewrite",
+		name: "edit",
 		version: "1.2",
 		author: "RANA", //Don't change the credit because I made it. Any problems to contact me. https://facebook.com/100063487970328
 		role: 2,
