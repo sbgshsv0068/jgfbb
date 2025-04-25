@@ -1,6 +1,6 @@
  module.exports = {
   config: {
-    name: "respect",
+    name: "addadmin",
     aliases: ["giveadmin"],
     version: "1.0",
     author: "AceGun x Samir Œ",
