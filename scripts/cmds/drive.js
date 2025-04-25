@@ -10,7 +10,7 @@ module.exports = {
 		description: {
 			en: "Upload a video and add it to Google Drive"
 		},
-		category: "utility",
+		category: "upload",
 		guide: {
 			en: "   {pn} <link>: Add video from link to Google Drive\n   Reply to a message with media to upload"
 		}
