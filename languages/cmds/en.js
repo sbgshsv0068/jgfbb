@@ -127,7 +127,7 @@ module.exports = {
 			notExist: "❌ | %1 banned words do not exist in the list before: %2",
 			emptyList: "⚠️ | The list of banned words in your group is currently empty",
 			badWordsList: "📑 | The list of banned words in your group: %1",
-			onlyAdmin3: "⚠️ | Only admins can %1 this feature",
+			onlyAdmin3: "⚠️ | 𝙾𝚗𝚕𝚢 𝙰𝚍𝚖𝚒𝚗 𝙲𝚊𝚗  %1 𝚁𝚝 𝚑𝚒𝚜 𝙵𝚎𝚊𝚝𝚞𝚛𝚎",
 			turnedOnOrOff: "✅ | Banned words warning has been %1",
 			onlyAdmin4: "⚠️ | Only admins can delete banned words warning",
 			missingTarget: "⚠️ | You haven't entered user ID or tagged user",
@@ -304,7 +304,7 @@ module.exports = {
 		description: "filter group members by number of messages or locked account",
 		guide: "   {pn} [<number of messages> | die]",
 		text: {
-			needAdmin: "⚠️ | Please add the bot as a group admin to use this command",
+			needAdmin: "⚠️ | 𝙿𝚕𝚎𝚊𝚜𝚎 𝙰𝚍𝚍 𝚃𝚑𝚎 𝙱𝚘𝚝 𝙰𝚜 𝙶𝚛𝚘𝚞𝚙 𝙰𝚍𝚖𝚒𝚗 𝚃𝚘 𝚄𝚜𝚎 𝚃𝚑𝚒𝚜 𝙲𝚘𝚖𝚖𝚊𝚗𝚍",
 			confirm: "⚠️ | Are you sure you want to delete group members with less than %1 messages?\nReact to this message to confirm",
 			kickByBlock: "✅ | Successfully deleted %1 members who are locked acc",
 			kickByMsg: "✅ | Successfully deleted %1 members with less than %2 messages",
@@ -382,7 +382,7 @@ module.exports = {
 			missingMessage: "Please enter the message you want to send to all groups",
 			notification: "Notification from admin bot to all chat groups (do not reply to this message)",
 			sendingNotification: "Start sending notification from admin bot to %1 chat groups",
-			sentNotification: "✅ Sent notification to %1 groups successfully",
+			sentNotification: "✅| 𝚂𝚎𝚗𝚝 𝙽𝚘𝚝𝚒𝚏𝚒𝚌𝚊𝚝𝚒𝚘𝚗 𝚃𝚘 %1 𝙶𝚛𝚘𝚞𝚘𝚜 𝚂𝚞𝚌𝚌𝚎𝚜𝚏𝚞𝚕𝚕𝚢 ",
 			errorSendingNotification: "An error occurred while sending to %1 groups:\n %2"
 		}
 	},
