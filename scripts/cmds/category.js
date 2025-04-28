@@ -6,7 +6,7 @@ function apply(text, fontMap) {
   return text.replace(/[a-zA-Z0-9]/g, (char) => fontMap[char] || char);
 }
 
-const sans = {
+const rana = {
   a: "𝚊", b: "𝚋", c: "𝚌", d: "𝚍", e: "𝚎", f: "𝚏", g: "𝚐", h: "𝚑",
   i: "𝚒", j: "𝚓", k: "𝚔", l: "𝚕", m: "𝚖", n: "𝚗", o: "𝚘", p: "𝚙",
   q: "𝚚", r: "𝚛", s: "𝚜", t: "𝚝", u: "𝚞", v: "𝚟", w: "𝚠", x: "𝚡",
@@ -17,7 +17,7 @@ const sans = {
   "4": "𝟺", "5": "𝟻", "6": "𝟼", "7": "𝟽", "8": "𝟾", "9": "𝟿",
 };
 
-const bold = {
+const afroja = {
   a: "𝗮", b: "𝗯", c: "𝗰", d: "𝗱", e: "𝗲", f: "𝗳", g: "𝗴", h: "𝗵",
   i: "𝗶", j: "𝗷", k: "𝗸", l: "𝗹", m: "𝗺", n: "𝗻", o: "𝗼", p: "𝗽",
   q: "𝗾", r: "𝗿", s: "𝘀", t: "𝘁", u: "𝘂", v: "𝘃", w: "𝘄", x: "𝘅",
@@ -54,7 +54,7 @@ module.exports = {
         if (cat !== "info") catSet.add(cat);
       }
 
-      const list = Array.from(catSet).map(cat => `‎‎‎├─➤ ${apply(cat, sans)}`).join("\n├────────────\n");
+      const list = Array.from(catSet).map(cat => `‎‎‎├─➤ ${apply(cat,afroja)}`).join("\n├────────────\n");
 
       return message.reply(`•  ✦ 𝗔𝘃𝗮𝗶𝗹𝗮𝗯𝗹𝗲 𝗖𝗮𝘁𝗲𝗴𝗼𝗿𝗶𝗲𝘀 ✦  •\n‎✨━━━━━━━━━━━━━━━━✨\n\n╭───────────────┓\n${list}\n╰───────────────┛\n𝘜𝘴𝘦: ${prefix}𝘤𝘢𝘵𝘦𝘨𝘰𝘳𝘺 [𝘤𝘢𝘵𝘦𝘨𝘰𝘳𝘺𝘕𝘢𝘮𝘦]\n 𝘌𝘹𝘢𝘮𝘱𝘭𝘦 : ${prefix}𝘤𝘢𝘵𝘦𝘨𝘰𝘳𝘺 𝘧𝘶𝘯 `);
     }
@@ -69,13 +69,13 @@ module.exports = {
       return message.reply(`❌ | 𝘊𝘢𝘵𝘦𝘨𝘰𝘳𝘺 "${inputCat}" 𝘕𝘰𝘵 𝘍𝘰𝘶𝘯𝘥.`);
     }
 
-    const boldCategory = apply(inputCat.toUpperCase(), bold);
-    let section = `\n‎╭─────────────╮\n│     ✦ ${boldCategory} ✦`;
+    const afrojaCategory = apply(inputCat.toUpperCase(), bold);
+    let section = `\n‎╭─────────────╮\n│     ✦ ${afrojaCategory} ✦`;
 
     for (let i = 0; i < matchedCommands.length; i++) {
       const row = matchedCommands
         .slice(i, i + 1)
-        .map(([name]) => `├── ❯   ${apply(name, sans)}`)
+        .map(([name]) => `├── ❯   ${apply(name, rana)}`)
         .join(" ");
       section += `\n${row}`;
     }
