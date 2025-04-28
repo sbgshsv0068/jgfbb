@@ -1,46 +1,56 @@
-const { GoatWrapper } = require("fca-liane-utils");
-const axios = require('axios');
-const jimp = require("jimp");
-const fs = require("fs");
-
-module.exports = {
-    config: {
-        name: "mygf",
-        version: "1.0",
-        author: "ArYAN",
-        countDown: 5,
-        role: 0,
-        shortDescription: "Purpose Your Beb",
-        longDescription: "Purpose Your Beb",
-        category: "love",
-        guide: {
-            vi: "{pn} @tag ",
-            en: "{pn} @tag "
-        }
-    },
-    onStart: async function ({ message, args, event, api }) {
-        const mention = Object.keys(event.mentions);
-        if (mention.length == 0) return message.reply("Please tor gf re mention de 🤬 ");
-        else if (mention.length == 1) {
-            const one = event.senderID, two = mention[0];
-            bal(one, two).then(ptth => { message.reply({ body: "Please Babe Accept My Love </100%", attachment: fs.createReadStream(ptth) }) })
-        } else {
-            const one = mention[1], two = mention[0];
-            bal(one, two).then(ptth => { message.reply({ body: "Please Babe Accept My Love </100%", attachment: fs.createReadStream(ptth) }) })
-        }
-    }
+module.exports.config = {
+	name: "gali",
+	version: "1.0.5",
+	role: 0,
+	author: "RANA",//Don't change the credit because I made it. Any problems to contact me. https://facebook.com/100063487970328
+	prefix: false,
+	category: "abuse",
+	guide: "smart gali detector with random reply and reaction",
+	cooldowns: 5
 };
 
-async function bal(one, two) {
-    const avone = await jimp.read(`https://graph.facebook.com/${one}/picture?width=512&height=512&access_token=6628568379%7Cc1e620fa708a1d5696fb991c1bde5662`);
-    avone.circle();
-    const avtwo = await jimp.read(`https://graph.facebook.com/${two}/picture?width=512&height=512&access_token=6628568379%7Cc1e620fa708a1d5696fb991c1bde5662`);
-    avtwo.circle();
-    const pth = "abcd.jpg";
-    const img = await jimp.read("https://i.imgur.com/kKlTenx.jpeg");
-    img.resize(1000, 560).composite(avone.resize(268, 280), 108, 155).composite(avtwo.resize(258, 275), 627, 155);
-    await img.writeAsync(pth);
-    return pth;
-              }
-const wrapper = new GoatWrapper(module.exports);
-wrapper.applyNoPrefix({ allowPrefix: true });
+const badwords = [
+  "মাগি", "বেস্যা", "খানকি মাগি", "চুদানি", "চুদা", "চুদ", "ভুদা", "buda", "gali", "galibaz",
+  "সাওয়া", "khanki", "maderxud", "xud", "xuda", "xudi", "cuda", "cudi", "mgi", "nodi", "নডি",
+  "মাদারচুদ", "ষুদা", "ষুদি", "bal", "খাংকির পোলা", "খানকি মাকি", "আবাল", "murgi", "baler",
+  "salar", "sala", "sawwa", "sawya", "tor mare xudi", "vuda", "heda", "bap", "মাদারচোদ",
+  "বোকাচোদা", "চুতমারানি", "পাকা মাগি", "তোর মায়ের", "তোর বাপের", "ভগ", "গুদ", "পুটকি", "পুটু",
+  "মাদারফাকার", "ফাক ইউ", "fuck you", "f*ck", "fucker", "গালি", "চোদা", "চুতিয়া", "cud",
+  "chod", "chud", "bitch", "motherchod", "madarchod", "gaand", "gaand mara", "পুটকির ছেলে",
+  "পুতকির পোলা", "মাগির পোলা", "ভগবান চুদুক", "খানকির পোলা", "ছাগলের বাচ্চা", "ছাগল",
+  "doger baccha", "doger pilla", "রেন্ডি", "পতিতা"
+];
+
+const randomReplies = [
+  "╰┈➤ এখানে গালাগালি করলে মুখ ধইরা সেলাই কইরা দিমু..!! 😾",
+  "╰┈➤ ভাইয়া গালি বাদ দেন, চুপচাপ থাকেন..!⚠️",
+  "╰┈➤ আবার যদি গালি দেহি, সরাসরি মিউট কইরা দিমু..!⛔",
+  "╰┈➤ গালি দিলে পাপ হয় বাইনসুদ..! 😒✂️",
+  "╰┈➤ গালি দিস না বোকাচদা..!😼🤦‍♂️",
+  "╰┈➤ গালি দিলে বউ থাকবে না..!😒😼",
+  "╰┈➤ ভালো হও মাসুদ..!👀🐸"
+];
+
+const randomReactions = ["😾", "⚠️", "⛔", "😠️", "❌", "😡", "👿"];
+
+module.exports.onChat = function({ api, event }) {
+	const { threadID, messageID, body } = event;
+	if (!body) return;
+
+	let message = body.toLowerCase();
+	message = message.replace(/[\s\W_]+/g, ""); // Normalize message
+
+	for (const word of badwords) {
+		const pattern = new RegExp(word.replace(/\s+/g, ''), "i"); // Match ignoring spaces
+		if (pattern.test(message)) {
+			const reply = randomReplies[Math.floor(Math.random() * randomReplies.length)];
+			const reaction = randomReactions[Math.floor(Math.random() * randomReactions.length)];
+
+			api.sendMessage({ body: reply }, threadID, messageID);
+			api.setMessageReaction(reaction, messageID, (err) => {}, true);
+			break;
+		}
+	}
+};
+
+module.exports.onStart = function({ api, event }) { };
