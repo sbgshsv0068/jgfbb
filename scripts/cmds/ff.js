@@ -8,7 +8,7 @@ module.exports = {
     name: "ff",
     aliases: ["freefire", "stalkff"],
     version: "3.0",
-    author: "RANA",//Don't change the credit because I made it. Any problems to contact me. https://facebook.com/100063487970328
+    author: "RANA", //Don't change the credit because I made it. Any problems to contact me. https://facebook.com/100063487970328
     countDown: 5,
     role: 0,
     shortDescription: "Get Free Fire player stats",
@@ -23,11 +23,15 @@ module.exports = {
 
     const apiUrl = `https://for-devs.ddns.net/api/ffinfo?uid=${uid}&apikey=r-rishad100`;
 
+    // Send loading message
+    const loadingMessage = await message.reply("⏳| Fetching Free Fire player data...");
+
     try {
       const res = await axios.get(apiUrl);
       const data = res.data;
 
       if (!data.accountInfo) {
+        await api.unsendMessage(loadingMessage.messageID);
         return message.reply("No player found with this ID.");
       }
 
@@ -49,6 +53,7 @@ module.exports = {
 ‎◆━━━━━━━━━━━━━━━━━◆
 `;
 
+      await api.unsendMessage(loadingMessage.messageID);
       await message.reply(playerInfo);
 
       // Function to create collage from images
@@ -69,32 +74,29 @@ module.exports = {
 
       // Categorize images
       const categories = {};
-
       for (const category of data.equippedItems) {
         const type = category.type;
         if (!categories[type]) categories[type] = [];
-
         for (const item of category.items) {
           categories[type].push(item.image);
         }
       }
 
-      // Now for each category, create collage and send
+      // Create and send collages
       for (const [type, images] of Object.entries(categories)) {
         if (images.length > 0) {
           const collagePath = await createCollage(images);
-
           await message.reply({
             body: `🖼️ **${type} 𝐈𝐭𝐞𝐦𝐬**`,
             attachment: fs.createReadStream(collagePath)
           });
-
-          fs.unlinkSync(collagePath); // delete after sending
+          fs.unlinkSync(collagePath); // Clean up
         }
       }
 
     } catch (e) {
       console.error(e);
+      await api.unsendMessage(loadingMessage.messageID);
       message.reply("An error occurred while fetching player data.");
     }
   }
