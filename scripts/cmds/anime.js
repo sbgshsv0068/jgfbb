@@ -18,7 +18,7 @@ module.exports = {
     const senderID = event.senderID;
 
     const loadingMessage = await message.reply({
-      body: "𝘓𝘰𝘢𝘥𝘪𝘯𝘨 𝘈𝘯𝘪𝘮𝘦 𝘝𝘪𝘥𝘦𝘰.. 𝘗𝘭𝘦𝘢𝘴𝘦 𝘞𝘢𝘪𝘵 ! ⏳",
+      body: "⏳| 𝘓𝘰𝘢𝘥𝘪𝘯𝘨 𝘈𝘯𝘪𝘮𝘦 𝘝𝘪𝘥𝘦𝘰.. 𝘗𝘭𝘦𝘢𝘴𝘦 𝘞𝘢𝘪𝘵 !",
     });
 
     const link = [
