@@ -2,7 +2,7 @@ const fs = require("fs-extra");
  
 module.exports = {
 config: {
-    name: "bebs",
+    name: "beb",
     version: "1.0",
     author: "RANA",//Don't change the credit because I made it. Any problems to contact me. https://facebook.com/100063487970328
     countDown: 5,
@@ -129,7 +129,7 @@ config: {
        };
  
        if ((event.body.toLowerCase() == "bts ki")) {
-         return api.sendMessage("Yes I l", threadID);
+         return api.sendMessage("ছাগল 🐸", threadID);
        };
  
        if ((event.body.toLowerCase() == "sakin")) {
