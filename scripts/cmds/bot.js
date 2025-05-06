@@ -209,7 +209,7 @@ module.exports = {
  
         await api.sendMessage(
           {
-            body: `‎‎╭──────────────╮\n‎│➮❝✨ ${username} 🙈❞\n‎│──────────────╯\n‎└➤ ${randomMessage}`,
+            body: `‎‎‎✨⊹⊱ ${username} ⊰⊹✨\n‎‎◆━━━━━━━━━━━━━━━◆\n‎ ${randomMessage}`,
             mentions: [{ tag: username, id: event.senderID }],
           },
           event.threadID,
