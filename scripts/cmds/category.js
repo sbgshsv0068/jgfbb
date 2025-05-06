@@ -69,7 +69,7 @@ module.exports = {
       return message.reply(`❌ | 𝘊𝘢𝘵𝘦𝘨𝘰𝘳𝘺 "${inputCat}" 𝘕𝘰𝘵 𝘍𝘰𝘶𝘯𝘥.`);
     }
 
-    const afrojaCategory = apply(inputCat.toUpperCase(), bold);
+    const afrojaCategory = apply(inputCat.toUpperCase(),afroja);
     let section = `\n‎╭─────────────╮\n│     ✦ ${afrojaCategory} ✦`;
 
     for (let i = 0; i < matchedCommands.length; i++) {
