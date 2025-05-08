@@ -9,7 +9,7 @@ module.exports = {
     version: "1.0",
     countDown: 10,
     role: 0,
-    category: "ai-generated",
+    category: "img-gen",
     guide: {
       en: "-flux <prompt> --<ratio>\n\nOptional ratios:\n\n--1 for 1:1\n--2 for 16:9\n--3 for 4:3\n--4 for 3:2\n--5 for 5:4\n--6 for 9:16\n--7 for 2:3\n--8 for 3:4\n--9 for 4:9\n\nExample: -flux 'your prompt' --1\n\n[FLUX Model Image Generations]"
     },
