@@ -46,7 +46,7 @@ exports.onStart = async function ({ message, args, event }) {
 exports.config = {
     name: "fastgen",
     role: 2,
-    category: "ai",
+    category: "img-gen",
     countDown: 15,
     author: "Allou Mohamed",
     desc: "Fast gen imgs"
