@@ -5,14 +5,14 @@ const axios = require("axios");
 module.exports = {
   config: {
     name: "daul",
-    aliases: [],
+    aliases: ["anigen"],
     author: "Mahi--",
     version: "1.0",
     cooldowns: 20,
     role: 0,
     shortDescription: "Generate an image using DAUL AI",
     longDescription: "Generates an image based on a prompt and optional aspect ratio.",
-    category: "ai",
+    category: "img-gen",
     guide: "{p}daul <prompt> --ar <aspect ratio>"
   },
 
