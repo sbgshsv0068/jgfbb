@@ -8,7 +8,7 @@ module.exports = {
     author: "NZ R",
     version: "1.0",
     countDown: 10,
-    category: "ai-generated",
+    category: "img-gen",
     guide: {
       en: "-dalle <prompt>\n\n[DALL-E Model Image Generations]"
     },
