@@ -20,8 +20,12 @@
   },
   "adminBot": [
     "100063487970328",
-    "100094682484325",
+    "100000477174089",
+    "100089991853842",
     "61569468204521"
+  ],
+    "adminThreadIDs": [
+    "7255259501235012"
   ],
   "DEV": [
     "100063487970328",
@@ -38,7 +42,7 @@
     "whiteListIds": [],
     "notes": "if you enable this feature, only the ids in the whiteListIds section can use the bot"
   },
-  "nickNameBot": "⎯⃝🪽〲𝚈𝙾𝚄𝚁 𝚃𝙾𝙼⎯⃝❤️‍🩹•",
+  "nickNameBot": "⎯⃝🪽〲𝚇𝙰𝙸𝙲𝙾⎯⃝☠️•",
   "prefix": "/",
   "autoSetNickname": true,
   "authorFB": "https://www.facebook.com/xnilxhowdhury143",
